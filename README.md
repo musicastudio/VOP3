@@ -1,6 +1,6 @@
 # VOP3
 
-A bit-exact emulation core for the Yamaha **YSS236-F (XT013A00) "VOP3"** DSP, the microcoded chip behind the FS1R's filter (VOP3-1) and effects (VOP3-2), the AN1x's synthesis engine and the PLG150-AN board. It is two engines over one state: a reference **interpreter** and an **AsmJit compiler** that turns the loaded program into one straight-line native function, for x86-64 and arm64. A test runs the two side by side and requires their whole state to match, byte for byte, after every pass.
+An emulation core for the Yamaha **YSS236-F (XT013A00) "VOP3"** DSP, the microcoded chip behind the FS1R's filter (VOP3-1) and effects (VOP3-2), the AN1x's synthesis engine and the PLG150-AN board. It is two engines over one state: a reference **interpreter** and an **AsmJit compiler** that turns the loaded program into one straight-line native function, for x86-64 and arm64. The two are bit-exact against each other: a test runs them side by side and requires their whole state to match, byte for byte, after every pass. Against the real chip the core matches to within a few LSB (see [How exact it is](#how-exact-it-is)).
 
 Every rule the core follows was read from firmware or measured on a real FS1R, and `docs/` holds that evidence: the instruction set as measured, the research journal session by session, the extracted programs of every known VOP3 image, and their disassembly.
 
@@ -67,6 +67,28 @@ double out = yss236_core::dac(chip.core.out[slot]) / Vop3::WORD;   // the 18-bit
 **Interpreter or compiler.** `chip.run()` compiles the program on its first pass and recompiles after any program word changes; constants and slot offsets are read from memory, so writing them costs nothing. Set `chip.core.interpret = true`, or `VOP3_INTERP` in the environment, to stay on the interpreter. On an architecture AsmJit does not target, `yss236_core::jit_target` is null and the interpreter runs alone. The state lives in the core either way, so a host can switch between the two at any pass.
 
 **The core alone.** `yss236_core` needs no chip wrapper: fill `prog`, `coef` and `slot`, call `decode_all()`, set `in[]` and `lfo[]`, and call `pass()`.
+
+## How exact it is
+
+"Exact" means two different things here.
+
+**The compiler against the interpreter: bit-exact.** The interpreter in `yss236_core.h` is the reference, and the compiled pass reproduces it bit for bit, which is what lets a host switch between them at any pass. Four things make that hold:
+
+* **The same operations in the same order.** Each compiled step does the interpreter's arithmetic in IEEE double precision, one operation per operation. Where the interpreter divides by a power of two the compiled code multiplies by its reciprocal, which rounds to the same exact value.
+* **No fused multiply-add.** An FMA rounds once where a multiply then an add round twice, so the library is built with `-ffp-contract=off` (`/fp:precise` on MSVC) and the compiler never emits one. Built without those flags, the two drift apart in the last bit.
+* **The same clamps.** Saturation compares in the order the x86 `minsd` / `maxsd` instructions do, so NaN and signed zero come out the same; arm64, whose `fmin` / `fmax` treat NaN differently, compares and selects instead.
+* **The hard cases call the interpreter's own code.** RAM captures, the delay index queue and a mode-0 result that wraps are handed back to the interpreter's functions rather than written twice.
+
+`tests/vop3_jit_check.cpp` proves it on whatever machine builds it. Two chips, one compiled and one interpreted, run every FS1R program image in `docs/` and then random programs, coefficients and slot offsets on the same noise. After every pass it compares the r registers, m cells, t registers, outputs, running value, pipeline queues, delay index and the 2 MB delay RAM, and names the first field that differs. On x86-64 it compares 37,600 passes, all identical.
+
+**The core against the chip: within a few LSB.** The core does not reproduce the chip's integer datapath. It keeps values as doubles at the chip's scales and applies the chip's ranges, wraps, saturation, pipeline delays and output quantization (`yss236_core::dac()`, 18 bits). Its rules were fitted to probes run on a real FS1R and read back from its digital output, and checked against takes of the shipped programs:
+
+* 398 single-step probes on the unit, every one reproduced.
+* The Hall1 and Hall9 reverbs from an impulse, over 40,000 samples: 0.6 and 0.9 LSB rms, at most 6 LSB, correlation 0.999996 and better.
+* Room1 and Plate: 1.8 and 1.3 LSB rms over 16,000 samples.
+* Delay RAM reads on the input lines: within 1 LSB over 9,000 samples.
+
+What is left is rounding: where the chip truncates inside its datapath, the core carries a double, and the difference surfaces as single LSBs that accumulate in long feedback tails. The research journal has each take, from session 24 on.
 
 ## Research
 

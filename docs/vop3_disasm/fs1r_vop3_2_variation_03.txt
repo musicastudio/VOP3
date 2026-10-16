@@ -1,0 +1,96 @@
+1a0  path=0.0 route=0 op=3 r7=0.01 class=2  y = k*r[07] b=3
+1a1  path=0.0 route=1 op=0 r7=1.00 class=2  y = s + k*(r[43] + r[08]) b=3
+1a2  path=0.0 route=0 op=3 r7=0.01 class=2  y = k*r[44]
+1a3  path=0.0 route=0 op=0 r7=0.00 class=2  y = s + k*r[43] xfer = dram[68]
+1a4  path=0.0+ route=0 op=0 r7=0.00 class=2  y = s + k*(r[44] + r[45]) d[003]
+1a5  path=0.0+ route=0 op=0 r7=0.00 class=2  y = s + k*(r[46] + r[46]) d[047]
+1a6  path=0.0 route=1 op=0 r7=1.04 class=2  y = s + k*(r[45] + r[43])
+1a7  path=0.0 route=0 op=3 r7=0.01 class=2  y = k*r[46] xfer = dram[69]
+1a8  path=0.0 route=0 op=0 r7=0.00 class=2  y = s + k*r[45] d[38] <- xfer(steps 19d..1a3)
+1a9  path=0.0 route=0 op=0 r7=0.00 class=2  y = s + k*r[47]
+1aa  path=0.0+ route=0 op=0 r7=0.00 class=2  y = s + k*(r[48] + r[48])
+1ab  path=0.0 route=1 op=0 r7=1.04 class=2  y = s + k*(r[47] + r[45]) xfer = dram[6a]
+1ac  path=0.0 route=0 op=3 r7=0.01 class=2  y = k*r[48] d[39] <- xfer(steps 1a1..1a7)
+1ad  path=0.0 route=0 op=0 r7=0.00 class=2  y = s + k*r[47]
+1ae  path=0.0 route=0 op=0 r7=0.00 class=2  y = s + k*r[49]
+1af  path=0.0+ route=0 op=0 r7=0.00 class=2  y = s + k*(r[4a] + r[4a]) xfer = dram[6b]
+1b0  path=0.0 route=2 op=0 r7=1.04 class=2  y = s + k*(r[49] + r[47]) d[3a] <- xfer(steps 1a5..1ab)
+1b1  path=0.0 route=0 op=7 r7=0.03 class=2  y = k*in -> w[20]
+1b2  path=0.0 route=0 op=4 r7=0.02 class=2  y = s -> w[2a] d[6a] = y/16
+1b3  path=0.0 route=0 op=0 r7=1.04 class=2  y = s + k*(r[4b] + r[4b]) xfer = dram[6c]
+1b4  path=0.0 route=0 op=3 r7=0.01 class=2  y = k*r[49] d[3b] <- xfer(steps 1a9..1af)
+1b5  path=0.0 route=1 op=4 r7=1.02 class=2  y = s -> w[12]
+1b6  path=0.0 route=0 op=3 r7=0.01 class=2  y = k*r[49]
+1b7  path=2.0 route=0 op=4 r7=1.02 class=2  y = s -> w[12] dram[6d] = y/16
+1b8  path=0.0 route=0 op=3 r7=0.01 class=2  y = k*r[77] d[3c] <- xfer(steps 1ad..1b3)
+1b9  path=0.0 route=1 op=4 r7=1.02 class=2  y = s -> w[13]
+1ba  path=0.0 route=0 op=3 r7=0.01 class=2  y = k*r[77]
+1bb  path=2.0 route=0 op=4 r7=1.02 class=2  y = s -> w[13] dram[6e] = y/16
+1bc  path=0.0 route=0 op=7 r7=0.03 class=2  y = k*in -> w[16] b=1
+1bd  path=0.0 route=0 op=4 r7=0.02 class=2  y = s -> w[17] b=1
+1be  path=0.0 route=0 op=4 r7=0.02 class=2  y = s -> w[18] b=1
+1bf  path=0.0 route=0 op=4 r7=0.02 class=2  y = s -> w[19] xfer = dram[6f] b=1
+1c0  path=0.0 route=0 op=4 r7=0.02 class=2  y = s -> w[1a] b=1
+1c1  path=0.0 route=0 op=4 r7=0.02 class=2  y = s -> w[1b] b=1
+1c2  path=0.0 route=0 op=4 r7=0.02 class=2  y = s -> w[1c] d[004] b=1
+1c3  path=0.0 route=0 op=4 r7=0.02 class=2  y = s -> w[1d] xfer = dram[70] b=1
+1c4  path=0.0 route=0 op=4 r7=0.02 class=2  y = s -> w[1e] d[3d] <- xfer(steps 1b9..1bf) b=1
+1c5  path=2.0 route=0 op=4 r7=1.02 class=2  y = s -> w[1f] d[2b] = y/16 b=1
+1c6  nop
+1c7  path=0.0 route=0 op=0 r7=0.00 class=0  dram[71] = y/16
+1c8  path=0.0 route=0 op=0 r7=0.00 class=0  d[3e] <- xfer(steps 1bd..1c3)
+1c9  nop
+1ca  nop
+1cb  path=0.0 route=0 op=0 r7=0.00 class=0  xfer = dram[72]
+1cc  nop
+1cd  nop
+1ce  nop
+1cf  path=0.0 route=0 op=0 r7=0.00 class=0  xfer = dram[73]
+1d0  path=0.0 route=0 op=0 r7=0.00 class=0  d[3f] <- xfer(steps 1c5..1cb)
+1d1  nop
+1d2  path=0.0 route=0 op=7 r7=0.03 class=2  y = k*in -> w[38] b=1
+1d3  path=0.0 route=0 op=4 r7=0.02 class=2  y = s -> w[39] xfer = dram[74] b=1
+1d4  path=0.0 route=0 op=4 r7=0.02 class=2  y = s -> w[3a] d[38] <- xfer(steps 1c9..1cf) b=1
+1d5  path=0.0 route=0 op=4 r7=0.02 class=2  y = s -> w[3b] b=1
+1d6  path=0.0 route=0 op=4 r7=0.02 class=2  y = s -> w[3c] b=1
+1d7  path=0.0 route=0 op=4 r7=0.02 class=2  y = s -> w[3d] xfer = dram[75] b=1
+1d8  path=0.0 route=0 op=4 r7=0.02 class=2  y = s -> w[3e] d[39] <- xfer(steps 1cd..1d3) b=1
+1d9  path=0.0 route=0 op=4 r7=0.02 class=2  y = s -> w[3f] b=1
+1da  path=0.0 route=0 op=4 r7=0.02 class=2  y = s -> w[38] b=1
+1db  path=2.0 route=0 op=4 r7=1.02 class=2  y = s -> w[39] d[2c] = y/16 dram[76] = y/16 b=1
+1dc  path=0.0 route=0 op=7 r7=0.03 class=2  y = k*in -> w[2b] d[38] <- xfer(steps 1d1..1d7) b=1
+1dd  path=0.0 route=0 op=4 r7=1.02 class=2  y = s -> w[21] b=1
+1de  path=0.0 route=0 op=7 r7=0.03 class=2  y = k*in -> w[2c] b=1
+1df  path=0.0 route=0 op=4 r7=1.02 class=2  y = s -> w[38] xfer = dram[77] b=1
+1e0  nop
+1e1  nop
+1e2  nop
+1e3  path=0.0 route=0 op=0 r7=0.00 class=0  xfer = dram[78]
+1e4  path=0.0 route=0 op=0 r7=0.00 class=0  d[39] <- xfer(steps 1d9..1df)
+1e5  nop
+1e6  path=0.0 route=0 op=3 r7=0.01 class=2  y = k*r[78]
+1e7  path=2.0 route=0 op=4 r7=1.02 class=2  y = s -> w[39] dram[79] = y/16
+1e8  path=0.0 route=0 op=3 r7=0.01 class=2  y = k*r[78] d[3a] <- xfer(steps 1dd..1e3)
+1e9  path=0.0 route=1 op=4 r7=1.02 class=2  y = s -> w[39]
+1ea  path=0.0 route=0 op=3 r7=0.01 class=2  y = k*r[79]
+1eb  path=2.0 route=0 op=4 r7=1.02 class=2  y = s -> w[3a] dram[7a] = y/16
+1ec  path=0.0 route=0 op=3 r7=0.01 class=2  y = k*r[79]
+1ed  path=0.0 route=1 op=4 r7=1.02 class=2  y = s -> w[3a]
+1ee  path=0.0 route=0 op=3 r7=0.01 class=2  y = k*r[77] b=1
+1ef  path=2.0 route=0 op=0 r7=1.00 class=2  y = s + k*r[4b] dram[7b] = y/16 b=1
+1f0  nop
+1f1  path=0.0 route=0 op=3 r7=0.01 class=2  y = k*r[07] b=1
+1f2  path=0.0 route=2 op=0 r7=1.00 class=2  y = s + k*(r[11] + r[79]) b=1
+1f3  path=2.0 route=0 op=7 r7=1.03 class=2  y = k*in -> w[14] dram[7c] = y/16
+1f4  nop
+1f5  path=0.0 route=0 op=3 r7=0.01 class=2  y = k*r[08] b=1
+1f6  path=0.0 route=2 op=0 r7=1.00 class=2  y = s + k*(r[12] + r[78]) b=1
+1f7  path=2.0 route=0 op=7 r7=1.03 class=2  y = k*in -> w[15] dram[7d] = y/16
+1f8  nop
+1f9  nop
+1fa  nop
+1fb  nop
+1fc  nop
+1fd  nop
+1fe  nop
+1ff  nop

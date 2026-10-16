@@ -1,0 +1,512 @@
+000  path=0.0 route=0 op=7 r7=0.03 class=2  y = k*in -> w[01] b=1
+001  path=0.0 route=1 op=4 r7=1.02 class=2  y = s -> w[02] d[01] = y/8 b=1   ; VCO1 Pmod Dp
+002  path=0.0 route=0 op=7 r7=0.03 class=2  y = k*in -> w[01] b=1   ; VCO2 Pmod Dp
+003  path=0.0 route=0 op=4 r7=1.02 class=2  y = s -> w[02] d[03] = y/16 b=1   ; VCO2 Pmod Dp
+004  path=0.0 route=0 op=3 r7=0.01 class=2  y = k*r[7f] -> w[03] b=2   ; VCO1 Pitch, VCO1 Fine
+005  path=0.0 route=0 op=4 r7=1.02 class=2  y = s -> w[01] b=1
+006  path=0.0 route=0 op=3 r7=0.01 class=2  y = k*(r[4e] + r[7f]) b=1   ; VCO1 PW
+007  path=1.1 route=0 op=7 r7=1.03 class=2  y = k*in -> w[3f] b=3   ; FM Src1 v0
+008  path=0.0 route=0 op=5 r7=0.02 class=2  y = sgn(s) -> w[08] b=3
+009  path=0.1 route=0 op=4 r7=1.02 class=2  y = s -> w[16] k=2000(+0.2500) b=2   ; VCO1 Pitch, VCO1 Fine
+00a  path=0.4 route=0 op=4 r7=1.02 class=2  y = s -> w[2b] rd w[1]
+00b  path=1.2 route=0 op=7 r7=1.03 class=2  y = k*in -> w[3f] b=4   ; FM Src1 v1
+00c  path=1.3 route=0 op=7 r7=1.03 class=2  y = k*in -> w[3f] b=5   ; FM Src1 v2
+00d  path=0.0 route=0 op=5 r7=0.02 class=2  y = sgn(s) -> w[3f] b=3   ; SyncPit Dp v0, SyncPit Src v0
+00e  path=4.0 route=2 op=4 r7=1.02 class=2  y = s -> w[3f] b=3   ; Sync Pitch v0
+00f  path=6.0 route=3 op=1 r7=0.00 class=1  r[00] = k/256
+010  path=0.0 route=0 op=5 r7=0.02 class=2  y = sgn(s) -> w[09] b=4
+011  path=0.0 route=0 op=4 r7=1.02 class=2  y = s -> w[17] rd w[1] d[0cc] xfer = table[04]
+012  path=0.4 route=0 op=4 r7=1.02 class=2  y = s -> w[2c] rd w[2]
+013  path=1.2 route=0 op=7 r7=1.03 class=2  y = k*in -> w[3f] b=6   ; FM Src1 v3
+014  path=1.5 route=0 op=7 r7=1.03 class=2  y = k*in -> w[3f] b=7   ; FM Src1 v4
+015  path=0.0 route=0 op=5 r7=0.02 class=2  y = sgn(s) -> w[3f] xfer = table[05] b=4   ; SyncPit Dp v1, SyncPit Src v1
+016  path=4.0 route=2 op=4 r7=1.02 class=2  y = s -> w[3f] d[13] <- xfer(steps 00b..011) b=4   ; Sync Pitch v1
+017  path=6.0 route=3 op=1 r7=0.00 class=1  r[00] = k/256
+018  path=0.0 route=0 op=5 r7=0.02 class=2  y = sgn(s) -> w[0a] b=5
+019  path=0.0 route=0 op=4 r7=1.02 class=2  y = s -> w[18] rd w[1] xfer = table[06]
+01a  path=0.4 route=0 op=4 r7=1.02 class=2  y = s -> w[2d] rd w[3] d[0d] <- xfer(steps 00f..015)
+01b  path=1.3 route=0 op=7 r7=0.03 class=2  y = k*in -> w[13] k=4000(+0.5000)
+01c  path=0.0 route=3 op=5 r7=0.02 class=2  y = sgn(s) -> w[3f] b=3   ; VCO1 PWM Dp v0, VCO1 PWM Src v0
+01d  path=0.0 route=0 op=5 r7=0.02 class=2  y = sgn(s) -> w[3f] xfer = table[07] b=5   ; SyncPit Dp v2, SyncPit Src v2
+01e  path=4.0 route=2 op=4 r7=1.02 class=2  y = s -> w[3f] d[13] <- xfer(steps 013..019) b=5   ; Sync Pitch v2
+01f  path=6.0 route=3 op=1 r7=0.00 class=1  r[00] = k/256 d[096]
+020  path=0.0 route=0 op=5 r7=0.02 class=2  y = sgn(s) -> w[0b] b=6
+021  path=0.0 route=0 op=4 r7=1.02 class=2  y = s -> w[19] rd w[1] xfer = table[08]
+022  path=0.4 route=0 op=4 r7=1.02 class=2  y = s -> w[21] rd w[2] d[0d] <- xfer(steps 017..01d)
+023  path=1.2 route=0 op=7 r7=0.03 class=2  y = k*in -> w[13] k=4000(+0.5000)
+024  path=0.0 route=1 op=7 r7=1.03 class=2  y = k*d[14] -> w[0d] rd w[3]
+025  path=0.0 route=0 op=5 r7=0.02 class=2  y = sgn(s) -> w[3f] xfer = table[09] b=6   ; SyncPit Dp v3, SyncPit Src v3
+026  path=4.0 route=2 op=4 r7=1.02 class=2  y = s -> w[3f] d[13] <- xfer(steps 01b..021) b=6   ; Sync Pitch v3
+027  path=6.0 route=3 op=1 r7=0.00 class=1  r[00] = k/256
+028  path=0.0 route=0 op=5 r7=0.02 class=2  y = sgn(s) -> w[0c] b=7
+029  path=0.1 route=0 op=4 r7=1.02 class=2  y = s -> w[1a] rd w[1] xfer = table[0a] b=1
+02a  path=0.4 route=0 op=4 r7=1.02 class=2  y = s -> w[1c] rd w[5] d[0d] <- xfer(steps 01f..025)
+02b  path=1.2 route=0 op=7 r7=0.03 class=2  y = k*in -> w[13] k=4000(+0.5000)
+02c  path=0.0 route=1 op=7 r7=1.03 class=2  y = k*d[15] -> w[0d] rd w[2]
+02d  path=0.0 route=3 op=5 r7=0.02 class=2  y = sgn(s) -> w[3f] xfer = table[0b] b=4   ; VCO1 PWM Dp v1, VCO1 PWM Src v1
+02e  path=4.4 route=2 op=5 r7=1.02 class=2  y = sgn(s) -> w[01] d[0d] <- xfer(steps 023..029)
+02f  path=6.0 route=3 op=1 r7=0.00 class=1  r[00] = k/256
+030  path=0.2 route=1 op=7 r7=1.03 class=2  y = k*d[0f] -> w[0d] rd w[2]
+031  path=0.0 route=3 op=5 r7=0.02 class=2  y = sgn(s) -> w[3f] xfer = table[0c] b=5   ; VCO1 PWM Dp v2, VCO1 PWM Src v2
+032  path=1.3 route=0 op=7 r7=0.03 class=2  y = k*in -> w[0d] d[0d] <- xfer(steps 027..02d) k=4000(+0.5000)
+033  path=0.0 route=3 op=5 r7=0.02 class=2  y = sgn(s) -> w[3f] b=6   ; VCO1 PWM Dp v3, VCO1 PWM Src v3
+034  path=0.0 route=3 op=5 r7=0.02 class=2  y = sgn(s) -> w[3f] b=7   ; VCO1 PWM Dp v4, VCO1 PWM Src v4
+035  path=0.0 route=1 op=7 r7=1.03 class=2  y = k*d[10] -> w[0d] rd w[3] xfer = table[0d]
+036  path=4.0 route=0 op=3 r7=2.01 class=2  y = k*r[4f] d[0d] <- xfer(steps 02b..031) k=2000(+0.2500)
+037  path=0.0 route=0 op=2s r7=0.09 class=2  y = 0 -> w[3f]
+038  path=0.0 route=0 op=2s r7=0.09 class=2  y = 0 -> w[3f]
+039  path=1.3 route=0 op=7 r7=0.03 class=2  y = k*in -> w[0d] xfer = table[0e] k=4000(+0.5000)
+03a  path=0.0 route=0 op=5 r7=0.02 class=2  y = sgn(s) -> w[3f] d[0e] <- xfer(steps 02f..035) b=7   ; SyncPit Dp v4, SyncPit Src v4
+03b  path=4.0 route=2 op=4 r7=1.02 class=2  y = s -> w[3f] b=7   ; Sync Pitch v4
+03c  path=6.0 route=3 op=1 r7=0.00 class=1  r[00] = k/256
+03d  path=0.0 route=0 op=2s r7=0.09 class=2  y = 0 -> w[3f] d[0cd]
+03e  path=0.0 route=0 op=2s r7=0.09 class=2  y = 0 -> w[3f] d[0e] <- xfer(steps 033..039) xfer = table[0f]
+03f  path=0.0 route=0 op=2s r7=0.09 class=2  y = 0 -> w[3f] d[093]
+040  path=1.2 route=0 op=5 r7=0.02 class=2  y = sgn(s) -> w[0e] d[18] = y/16
+041  path=0.0 route=0 op=5 r7=0.02 class=2  y = sgn(s) -> w[14] d[21] = y/16 k=4000(+0.5000)
+042  path=0.0 route=0 op=5 r7=0.02 class=2  y = sgn(s) -> w[14] d[26] = y/16 xfer = table[10] k=4000(+0.5000)
+043  path=4.4 route=2 op=5 r7=1.02 class=2  y = sgn(s) -> w[01] d[11] <- xfer(steps 038..03e)
+044  path=6.0 route=3 op=1 r7=0.00 class=1  r[00] = k/256
+045  path=1.2 route=1 op=5 r7=0.02 class=2  y = sgn(s) -> w[18] d[1c] = y/8 k=4000(+0.5000)
+046  path=0.0 route=0 op=0 r7=1.00 class=2  y = s + k*in[1].0 -> w[1b] d[17] = y/16 xfer = table[11]
+047  path=1.3+ route=3 op=6 r7=1.03 class=2  y = 0 -> w[0e] rd w[2] d[11] <- xfer(steps 03c..042)
+048  path=0.0 route=3 op=5 r7=2.02 class=2  y = sgn(s) -> w[18] k=1400(+0.1562)
+049  path=1.3 route=0 op=7 r7=0.03 class=2  y = k*in -> w[11] k=4000(+0.5000)
+04a  path=0.0^ route=0 op=2 r7=0.01 class=1  r[00] = k/256 rB=in[4].3
+04b  path=0.0 route=3 op=7 r7=1.03 class=2  y = k*d[21] -> w[14] rd w[3] xfer = table[12]
+04c  path=4.0 route=0 op=3 r7=2.01 class=2  y = k*r[50] d[19] <- xfer(steps 041..047) k=2000(+0.2500)
+04d  path=0.0 route=0 op=5s r7=0.0a class=3  rB=r[53] -> w[1c]
+04e  path=0.0 route=1 op=7 r7=1.03 class=2  y = k*d[11] -> w[11] rd w[3]
+04f  path=0.0 route=3 op=5 r7=2.02 class=2  y = sgn(s) -> w[17] k=1400(+0.1562)
+050  path=4.2 route=0 op=0s r7=2.08 class=3  rB=r[54] xfer = table[14] k=4000(+0.5000)
+051  path=1.3 route=3 op=6 r7=1.03 class=2  y = 0 -> w[0e] rd w[2] d[0e] <- xfer(steps 046..04c)
+052  path=1.3 route=0 op=7 r7=0.03 class=2  y = k*in -> w[19] k=4000(+0.5000)
+053  path=0.5^ route=0 op=2 r7=0.01 class=1  r[00] = k/256 rB=in[8].1 k=e148(-0.2400)
+054  path=0.0 route=3 op=7 r7=1.03 class=2  y = k*d[26] -> w[14] rd w[3] xfer = table[15]
+055  path=4.4 route=2 op=3 r7=0.01 class=2  y = 0 d[14] <- xfer(steps 04a..050)
+056  path=0.4 route=3 op=2 r7=2.01 class=2  y = 0 -> w[3e] d[097]
+057  path=1.3 route=0 op=5 r7=0.02 class=2  y = sgn(s) -> w[0e] d[19] = y/16
+058  path=0.0 route=0 op=5 r7=0.02 class=2  y = sgn(s) -> w[15] d[22] = y/16 k=4000(+0.5000)
+059  path=0.0 route=0 op=5 r7=0.02 class=2  y = sgn(s) -> w[15] d[27] = y/16 xfer = table[16] k=4000(+0.5000)
+05a  path=4.4 route=2 op=5 r7=1.02 class=2  y = sgn(s) -> w[01] d[30] <- xfer(steps 04f..055)
+05b  path=6.0 route=3 op=1 r7=0.00 class=1  r[00] = k/256 d[0ce]
+05c  path=1.3 route=1 op=5 r7=0.02 class=2  y = sgn(s) -> w[19] d[1d] = y/8 k=4000(+0.5000)
+05d  path=0.0 route=0 op=0 r7=1.00 class=2  y = s + k*in[1].1 d[1b] = y/16 xfer = table[17]
+05e  path=1.6+ route=3 op=6 r7=1.03 class=2  y = 0 -> w[14] rd w[3] d[2b] <- xfer(steps 053..059)
+05f  path=0.0 route=3 op=5 r7=2.02 class=2  y = sgn(s) -> w[19] k=1400(+0.1562)
+060  path=0.0^ route=0 op=2 r7=0.01 class=1  r[00] = k/256 rB=r[44]
+061  path=0.0 route=3 op=7 r7=1.03 class=2  y = k*d[22] -> w[15] rd w[6] xfer = table[18]
+062  path=4.0 route=0 op=3 r7=2.01 class=2  y = k*r[51] d[1b] <- xfer(steps 057..05d) k=2000(+0.2500)
+063  path=0.0 route=0 op=5s r7=0.0a class=3  rB=r[53] -> w[1d]
+064  path=0.0 route=3 op=5 r7=2.02 class=2  y = sgn(s) -> w[1b] k=1400(+0.1562)
+065  path=4.0 route=0 op=0s r7=2.08 class=3  rB=r[55] xfer = table[19]
+066  path=1.3 route=3 op=6 r7=1.03 class=2  y = 0 -> w[14] rd w[3] d[14] <- xfer(steps 05b..061)
+067  path=1.3 route=0 op=7 r7=0.03 class=2  y = k*in -> w[1b] k=4000(+0.5000)
+068  path=0.0^ route=0 op=2 r7=0.01 class=1  r[00] = k/256 rB=r[54]
+069  path=0.0 route=3 op=7 r7=1.03 class=2  y = k*d[27] -> w[15] rd w[3] xfer = table[1a]
+06a  path=4.4 route=2 op=3 r7=0.01 class=2  y = 0 d[14] <- xfer(steps 05f..065)
+06b  path=0.4 route=3 op=2 r7=2.01 class=2  y = 0 -> w[3e]
+06c  path=1.3 route=0 op=5 r7=0.02 class=2  y = sgn(s) -> w[14] d[15] = y/16
+06d  path=0.0 route=0 op=5 r7=0.02 class=2  y = sgn(s) -> w[0f] d[23] = y/16 k=4000(+0.5000)
+06e  path=0.0 route=0 op=5 r7=0.02 class=2  y = sgn(s) -> w[0f] d[28] = y/16 xfer = table[1b] k=4000(+0.5000)
+06f  path=4.4 route=2 op=5 r7=1.02 class=2  y = sgn(s) -> w[01] d[31] <- xfer(steps 064..06a)
+070  path=6.0 route=3 op=1 r7=0.00 class=1  r[00] = k/256
+071  path=1.3 route=1 op=5 r7=0.02 class=2  y = sgn(s) -> w[15] d[1e] = y/8 k=4000(+0.5000)
+072  path=0.0 route=0 op=0 r7=1.00 class=2  y = s + k*in[1].2 d[1b] = y/16 xfer = table[1c]
+073  path=1.6+ route=3 op=6 r7=1.03 class=2  y = 0 -> w[14] rd w[3] d[2c] <- xfer(steps 068..06e)
+074  path=0.0 route=3 op=5 r7=2.02 class=2  y = sgn(s) -> w[15] k=1400(+0.1562)
+075  path=0.0^ route=0 op=2 r7=0.01 class=1  r[00] = k/256 rB=r[6e]
+076  path=0.0 route=3 op=7 r7=1.03 class=2  y = k*d[23] -> w[0f] rd w[6] xfer = table[1d]
+077  path=4.0 route=0 op=3 r7=2.01 class=2  y = k*r[52] d[1b] <- xfer(steps 06c..072) k=2000(+0.2500)
+078  path=0.0 route=0 op=5s r7=0.0a class=3  rB=r[53] -> w[1e]
+079  path=0.0 route=3 op=5 r7=2.02 class=2  y = sgn(s) -> w[1b] k=1400(+0.1562)
+07a  path=4.0 route=0 op=0s r7=2.08 class=3  rB=r[56] xfer = table[1e]
+07b  path=1.3 route=3 op=6 r7=1.03 class=2  y = 0 -> w[14] rd w[3] d[14] <- xfer(steps 070..076)
+07c  path=1.3 route=0 op=7 r7=0.03 class=2  y = k*in -> w[1b] d[0cf] k=4000(+0.5000)
+07d  path=0.0^ route=0 op=2 r7=0.01 class=1  r[00] = k/256 rB=r[7e]
+07e  path=0.0 route=3 op=7 r7=1.03 class=2  y = k*d[28] -> w[0f] rd w[3] xfer = table[1f]
+07f  path=4.4 route=2 op=3 r7=0.01 class=2  y = 0 d[094]
+080  path=0.4 route=3 op=2 r7=2.01 class=2  y = 0 -> w[3e] d[20] <- xfer(steps 075..07b)
+081  path=1.3 route=0 op=5 r7=0.02 class=2  y = sgn(s) -> w[14] d[1b] = y/16
+082  path=0.0 route=0 op=5 r7=0.02 class=2  y = sgn(s) -> w[10] d[24] = y/16 k=4000(+0.5000)
+083  path=0.0 route=0 op=5 r7=0.02 class=2  y = sgn(s) -> w[10] d[29] = y/16 xfer = table[20] k=4000(+0.5000)
+084  path=4.4 route=2 op=5 r7=1.02 class=2  y = sgn(s) -> w[01] d[32] <- xfer(steps 079..07f)
+085  path=6.0 route=3 op=1 r7=0.00 class=1  r[00] = k/256
+086  path=1.1 route=1 op=5 r7=0.02 class=2  y = sgn(s) -> w[1b] d[1f] = y/8 k=4000(+0.5000)
+087  path=0.0 route=0 op=0 r7=1.00 class=2  y = s + k*in[1].3 d[01] = y/16 xfer = table[21]
+088  path=1.3+ route=3 op=6 r7=1.03 class=2  y = 0 -> w[20] rd w[3] d[2d] <- xfer(steps 07d..083)
+089  path=0.0 route=3 op=5 r7=2.02 class=2  y = sgn(s) -> w[1b] k=1400(+0.1562)
+08a  path=0.0^ route=0 op=2 r7=0.01 class=2  y = k*in[4].3
+08b  path=0.0 route=3 op=7 r7=1.03 class=2  y = k*d[24] -> w[10] rd w[3] xfer = table[22]
+08c  path=4.0 route=0 op=3 r7=2.01 class=2  y = k*r[53] d[01] <- xfer(steps 081..087) k=2000(+0.2500)
+08d  path=0.0 route=0 op=5s r7=0.0a class=3  rB=r[4d] -> w[1f]
+08e  path=0.0 route=3 op=5 r7=2.02 class=2  y = sgn(s) -> w[01] k=1400(+0.1562)
+08f  path=4.0 route=0 op=0s r7=2.08 class=3  rB=r[57] xfer = table[23]
+090  path=1.1 route=3 op=6 r7=1.03 class=2  y = 0 -> w[20] rd w[1] d[01] <- xfer(steps 085..08b)
+091  path=1.1 route=0 op=7 r7=0.03 class=2  y = k*in -> w[01] k=4000(+0.5000)
+092  path=0.0^ route=0 op=2 r7=0.01 class=2  y = k*in[7].4
+093  path=0.0 route=3 op=7 r7=1.03 class=2  y = k*d[29] -> w[10] rd w[1] xfer = table[24]
+094  path=4.4 route=2 op=3 r7=0.01 class=2  y = 0 d[33] <- xfer(steps 089..08f)
+095  path=0.4 route=3 op=2 r7=2.01 class=2  y = 0 -> w[3e]
+096  path=1.1 route=0 op=5 r7=0.02 class=2  y = sgn(s) -> w[01] d[01] = y/16
+097  path=0.0 route=0 op=5 r7=0.02 class=2  y = sgn(s) -> w[11] d[25] = y/16 k=4000(+0.5000)
+098  path=0.0 route=0 op=5 r7=0.02 class=2  y = sgn(s) -> w[11] d[2a] = y/16 xfer = table[26] k=4000(+0.5000)
+099  path=4.4 route=2 op=3 r7=0.01 class=2  y = 0 d[34] <- xfer(steps 08e..094)
+09a  path=1.2 route=0 op=3 r7=1.01 class=2  y = k*r[54] k=3852(+0.4400) b=3   ; VCO1 Edge v0
+09b  path=1.1 route=1 op=5 r7=0.02 class=2  y = sgn(s) -> w[01] d[20] = y/8 k=4000(+0.5000)
+09c  path=0.0 route=0 op=0 r7=1.00 class=2  y = s + k*in[1].4 d[35] = y/16 xfer = table[27]
+09d  path=1.3+ route=3 op=6 r7=1.03 class=2  y = 0 -> w[33] rd w[1] d[21] <- xfer(steps 092..098)
+09e  path=4.4 route=1 op=2 r7=0.01 class=2  y = 0 -> w[18] d[0d0]
+09f  path=0.0 route=3 op=5 r7=2.02 class=2  y = sgn(s) -> w[01] d[098] k=1400(+0.1562)
+0a0  path=0.2^ route=0 op=2 r7=0.01 class=2  y = k*r[44] b=1
+0a1  path=0.0 route=3 op=7 r7=1.03 class=2  y = k*d[25] -> w[11] rd w[3] xfer = table[28]
+0a2  path=4.4 route=1 op=2 r7=0.01 class=2  y = 0 -> w[1c] d[1c] <- xfer(steps 097..09d)
+0a3  path=0.3 route=0 op=5s r7=0.0a class=3  rB=r[4d] -> w[20] b=1
+0a4  path=0.0 route=3 op=5 r7=2.02 class=2  y = sgn(s) -> w[35] k=1400(+0.1562)
+0a5  path=4.1 route=0 op=0s r7=2.08 class=3  rB=r[54] xfer = table[29] b=1
+0a6  path=1.5 route=3 op=6 r7=1.03 class=2  y = 0 -> w[33] rd w[1] d[26] <- xfer(steps 09b..0a1)
+0a7  path=0.4 route=3 op=2 r7=2.01 class=2  y = 0 -> w[3e]
+0a8  path=0.5^ route=0 op=2 r7=0.01 class=2  y = k*r[54] k=35c3(+0.4200) b=3
+0a9  path=0.0 route=3 op=7 r7=1.03 class=2  y = k*d[2a] -> w[11] rd w[5] xfer = table[2a]
+0aa  path=0.0 route=0 op=3 r7=0.01 class=1  r[4d] = k/256 d[11] <- xfer(steps 09f..0a5) k=f000(-0.1250) b=1
+0ab  path=0.0 route=0 op=3 r7=0.01 class=1  r[4e] = k/256 k=f000(-0.1250) b=1
+0ac  path=1.6 route=0 op=3 r7=1.01 class=2  y = k*r[55] k=3852(+0.4400) b=4   ; VCO1 Edge v1
+0ad  path=1.7 route=0 op=5 r7=1.02 class=2  y = sgn(s) -> w[30]
+0ae  path=1.8 route=0 op=5 r7=1.02 class=2  y = sgn(s) -> w[30] d[19] <- xfer(steps 0a3..0a9)
+0af  path=4.4 route=1 op=2 r7=0.01 class=2  y = 0 -> w[19]
+0b0  path=1.9 route=3 op=2 r7=2.01 class=2  y = 0 -> w[3d]
+0b1  path=0.0 route=0 op=1s r7=0.08 class=2  y = in[4].0 bus += y
+0b2  path=0.0 route=0 op=4s r7=1.0a class=2  y = -s -> w[26] rd w[5] xfer = table[2c]
+0b3  path=4.4 route=1 op=2 r7=0.01 class=2  y = 0 -> w[1d]
+0b4  path=0.0 route=0 op=7 r7=0.03 class=2  y = k*in -> w[26] rd w[7]
+0b5  path=0.0 route=0 op=4 r7=1.02 class=2  y = s -> w[11] rd w[8]
+0b6  path=0.0 route=0 op=1s r7=0.08 class=2  y = in[5].0 bus += y xfer = table[2d]
+0b7  path=0.5 route=0 op=4s r7=1.0a class=2  y = -s -> w[11] rd w[5] d[1d] <- xfer(steps 0ac..0b2) k=35c3(+0.4200) b=4
+0b8  path=0.0 route=0 op=3 r7=1.01 class=2  y = 0
+0b9  path=1.6 route=0 op=3 r7=1.01 class=2  y = k*r[56] k=3852(+0.4400) b=5   ; VCO1 Edge v2
+0ba  path=1.7 route=0 op=5 r7=1.02 class=2  y = sgn(s) -> w[31]
+0bb  path=1.8 route=0 op=5 r7=1.02 class=2  y = sgn(s) -> w[31] d[22] <- xfer(steps 0b0..0b6)
+0bc  path=4.4 route=1 op=2 r7=0.01 class=2  y = 0 -> w[15]
+0bd  path=1.9 route=3 op=2 r7=2.01 class=2  y = 0 -> w[3d] d[0d1]
+0be  path=0.0 route=0 op=1s r7=0.08 class=2  y = in[4].1 bus += y d[095]
+0bf  path=0.0 route=0 op=4s r7=1.0a class=2  y = -s -> w[1d] rd w[5] xfer = table[2f]
+0c0  path=4.4 route=1 op=2 r7=0.01 class=2  y = 0 -> w[1e]
+0c1  path=0.0 route=0 op=7 r7=0.03 class=2  y = k*in -> w[1d] rd w[7]
+0c2  path=0.0 route=0 op=4 r7=1.02 class=2  y = s -> w[22] rd w[8]
+0c3  path=0.0 route=0 op=1s r7=0.08 class=2  y = in[5].1 bus += y xfer = table[30]
+0c4  path=0.5 route=0 op=4s r7=1.0a class=2  y = -s -> w[22] rd w[5] d[1d] <- xfer(steps 0b9..0bf) k=35c3(+0.4200) b=5
+0c5  path=0.0 route=0 op=3 r7=1.01 class=2  y = 0
+0c6  path=1.6 route=0 op=3 r7=1.01 class=2  y = k*r[57] k=3852(+0.4400) b=6   ; VCO1 Edge v3
+0c7  path=1.7 route=0 op=5 r7=1.02 class=2  y = sgn(s) -> w[32]
+0c8  path=1.8 route=0 op=5 r7=1.02 class=2  y = sgn(s) -> w[32] d[1b] <- xfer(steps 0bd..0c3)
+0c9  path=4.4 route=1 op=2 r7=0.01 class=2  y = 0 -> w[1b]
+0ca  path=1.9 route=3 op=2 r7=2.01 class=2  y = 0 -> w[3d]
+0cb  path=0.0 route=0 op=1s r7=0.08 class=2  y = in[4].2 bus += y
+0cc  path=0.0 route=0 op=4s r7=1.0a class=2  y = -s -> w[1d] rd w[5] xfer = table[33]
+0cd  path=4.4 route=1 op=2 r7=0.01 class=2  y = 0 -> w[1f]
+0ce  path=0.0 route=0 op=7 r7=0.03 class=2  y = k*in -> w[1d] rd w[7]
+0cf  path=0.0 route=0 op=4 r7=1.02 class=2  y = s -> w[1b] rd w[8]
+0d0  path=0.0 route=0 op=1s r7=0.08 class=2  y = in[5].2 bus += y xfer = table[34]
+0d1  path=0.5 route=0 op=4s r7=1.0a class=2  y = -s -> w[1b] rd w[5] d[1b] <- xfer(steps 0c6..0cc) k=35c3(+0.4200) b=6
+0d2  path=0.0 route=0 op=3 r7=1.01 class=2  y = 0
+0d3  path=1.6 route=0 op=3 r7=1.01 class=2  y = k*r[54] k=3852(+0.4400) b=7   ; VCO1 Edge v4
+0d4  path=1.7 route=0 op=5 r7=1.02 class=2  y = sgn(s) -> w[34]
+0d5  path=1.8 route=0 op=5 r7=1.02 class=2  y = sgn(s) -> w[34] d[01] <- xfer(steps 0ca..0d0)
+0d6  path=4.4 route=1 op=2 r7=0.01 class=2  y = 0 -> w[01]
+0d7  path=1.9 route=3 op=2 r7=2.01 class=2  y = 0 -> w[3d]
+0d8  path=0.0 route=0 op=1s r7=0.08 class=2  y = in[4].3 bus += y
+0d9  path=0.0 route=0 op=4s r7=1.0a class=2  y = -s -> w[1b] rd w[5] xfer = table[36]
+0da  path=4.4 route=1 op=2 r7=0.01 class=2  y = 0 -> w[20]
+0db  path=0.0 route=0 op=7 r7=0.03 class=2  y = k*in -> w[1b] rd w[7]
+0dc  path=0.0 route=0 op=4 r7=1.02 class=2  y = s -> w[01] rd w[8]
+0dd  path=0.0 route=0 op=1s r7=0.08 class=2  y = in[5].3 bus += y d[0c1] xfer = table[37]
+0de  path=0.2 route=0 op=4s r7=1.0a class=2  y = -s -> w[01] rd w[5] d[1b] <- xfer(steps 0d3..0d9) k=35c3(+0.4200) b=7
+0df  path=0.0 route=0 op=3 r7=1.01 class=2  y = 0 d[099]
+0e0  path=1.1 route=0 op=5 r7=1.02 class=2  y = sgn(s) -> w[19]
+0e1  path=1.3 route=0 op=5 r7=1.02 class=2  y = sgn(s) -> w[19]
+0e2  path=1.4 route=3 op=2 r7=2.01 class=2  y = 0 -> w[3d] d[03] <- xfer(steps 0d7..0dd)
+0e3  path=0.0 route=0 op=2 r7=1.01 class=2  y = k*(r[52] + r[7f]) -> w[03] b=2   ; VCO2 Pitch, VCO2 Fine
+0e4  path=0.0 route=0 op=1s r7=0.08 class=2  y = in[4].4 bus += y
+0e5  path=0.0 route=0 op=4s r7=1.0a class=2  y = -s -> w[1b] rd w[2]
+0e6  path=0.0 route=0 op=5 r7=0.02 class=2  y = sgn(s) -> w[08] b=3
+0e7  path=4.1 route=2 op=4 r7=1.02 class=2  y = s -> w[16] k=2000(+0.2500) b=2   ; VCO2 Pitch, VCO2 Fine
+0e8  path=6.0 route=3 op=1 r7=0.00 class=1  r[00] = k/256
+0e9  path=0.0 route=0 op=7 r7=0.03 class=2  y = k*in -> w[1b] rd w[1]
+0ea  path=0.0 route=0 op=4 r7=1.02 class=2  y = s -> w[03] rd w[3] xfer = table[3a]
+0eb  path=0.0 route=0 op=1s r7=0.08 class=2  y = in[5].4 bus += y
+0ec  path=0.0 route=0 op=4s r7=1.0a class=2  y = -s -> w[03] rd w[2]
+0ed  path=0.0 route=0 op=3 r7=1.01 class=2  y = 0
+0ee  path=0.0 route=0 op=5 r7=0.02 class=2  y = sgn(s) -> w[09] xfer = table[3b] b=4
+0ef  path=4.2 route=2 op=4 r7=1.02 class=2  y = s -> w[17] rd w[1] d[03] <- xfer(steps 0e4..0ea) k=4001(+0.5000) b=1
+0f0  path=6.0 route=3 op=1 r7=0.00 class=1  r[00] = k/256
+0f1  path=0.0 route=0 op=3 r7=0.01 class=2  y = k*(r[53] + r[7f]) b=1   ; VCO2 PW
+0f2  path=0.0 route=3 op=4 r7=0.02 class=2  y = s -> w[3f] xfer = table[3c] b=3   ; VCO2 PWM Dp v0, VCO2 PWM Src v0
+0f3  path=1.3 route=0 op=7 r7=0.03 class=2  y = k*in -> w[03] rd w[2] d[03] <- xfer(steps 0e8..0ee)
+0f4  path=0.0 route=3 op=5 r7=0.02 class=2  y = sgn(s) -> w[3f] b=4   ; VCO2 PWM Dp v1, VCO2 PWM Src v1
+0f5  path=0.0 route=3 op=5 r7=0.02 class=2  y = sgn(s) -> w[3f] b=5   ; VCO2 PWM Dp v2, VCO2 PWM Src v2
+0f6  path=0.0 route=0 op=5 r7=0.02 class=2  y = sgn(s) -> w[0a] xfer = table[3d] b=5
+0f7  path=4.0 route=2 op=4 r7=1.02 class=2  y = s -> w[18] rd w[1] d[03] <- xfer(steps 0ec..0f2)
+0f8  path=6.0 route=3 op=1 r7=0.00 class=1  r[00] = k/256
+0f9  path=0.0 route=0 op=5 r7=0.02 class=2  y = sgn(s) -> w[03] d[03] = y/16
+0fa  path=0.0 route=3 op=5 r7=0.02 class=2  y = sgn(s) -> w[3f] xfer = table[3e] b=6   ; VCO2 PWM Dp v3, VCO2 PWM Src v3
+0fb  path=1.3 route=0 op=7 r7=0.03 class=2  y = k*in -> w[03] rd w[2] d[02] <- xfer(steps 0f0..0f6)
+0fc  path=0.0 route=0 op=5s r7=0.0a class=3  rB=r[57] -> w[03] d[184]
+0fd  path=0.0 route=3 op=5 r7=0.02 class=2  y = sgn(s) -> w[3f] d[0c8] b=7   ; VCO2 PWM Dp v4, VCO2 PWM Src v4
+0fe  path=0.0 route=0 op=5 r7=0.02 class=2  y = sgn(s) -> w[0b] d[08b] xfer = table[3f] b=6
+0ff  path=4.0 route=2 op=4 r7=1.02 class=2  y = s -> w[19] rd w[1] d[02] <- xfer(steps 0f4..0fa)
+100  path=6.0 route=3 op=1 r7=0.00 class=1  r[00] = k/256
+101  path=0.0 route=0 op=5 r7=0.02 class=2  y = sgn(s) -> w[02] d[02] = y/16
+102  path=0.0 route=3 op=2 r7=2.01 class=2  y = k*(r[54] + r[54]) -> w[3e] xfer = table[40] k=e148(-0.2400)
+103  path=1.3 route=0 op=7 r7=0.03 class=2  y = k*in -> w[02] rd w[2] d[05] <- xfer(steps 0f8..0fe)
+104  path=0.0 route=0 op=5s r7=0.0a class=3  rB=r[58] -> w[02] d[186]
+105  path=1.1 route=0 op=3 r7=1.01 class=2  y = k*r[54] k=3852(+0.4400) b=3   ; VCO2 Edge v0
+106  path=0.0 route=0 op=5 r7=0.02 class=2  y = sgn(s) -> w[0c] d[09a] xfer = table[41] b=7
+107  path=4.0 route=2 op=4 r7=1.02 class=2  y = s -> w[1a] rd w[1] d[05] <- xfer(steps 0fc..102)
+108  path=6.0 route=3 op=1 r7=0.00 class=1  r[00] = k/256
+109  path=0.0 route=0 op=5 r7=0.02 class=2  y = sgn(s) -> w[05] d[05] = y/16
+10a  path=0.0 route=3 op=2 r7=2.01 class=2  y = k*(r[54] + r[55]) -> w[3e] xfer = table[42] k=e148(-0.2400)
+10b  path=1.3 route=0 op=7 r7=0.03 class=2  y = k*in -> w[05] rd w[2] d[09] <- xfer(steps 100..106)
+10c  path=0.0 route=0 op=5s r7=0.0a class=3  rB=r[59] -> w[05] d[189]
+10d  path=0.0 route=3 op=2 r7=2.01 class=2  y = k*(r[55] + r[56]) -> w[3e] k=e148(-0.2400)
+10e  path=0.0 route=0 op=5 r7=0.02 class=2  y = sgn(s) -> w[09] d[03] = y/16 xfer = table[43]
+10f  path=4.0 route=1 op=2 r7=0.01 class=2  y = 0 -> w[03] d[04] <- xfer(steps 104..10a)
+110  path=4.0 route=1 op=2 r7=0.01 class=2  y = 0 -> w[04]
+111  path=1.1 route=0 op=3 r7=1.01 class=2  y = k*r[54] k=3852(+0.4400) b=4   ; VCO2 Edge v1
+112  path=1.2 route=0 op=7 r7=0.03 class=2  y = k*in -> w[04] rd w[2] xfer = table[44]
+113  path=1.3 route=0 op=3 r7=1.01 class=2  y = k*r[55] d[04] <- xfer(steps 108..10e) k=3852(+0.4400) b=5   ; VCO2 Edge v2
+114  path=0.2 route=0 op=5s r7=0.0a class=3  rB=r[57] -> w[03] d[184] k=35c3(+0.4200) b=3
+115  path=0.0 route=3 op=2 r7=2.01 class=2  y = k*(r[53] + r[53]) -> w[3e] k=e148(-0.2400)
+116  path=0.0 route=0 op=5 r7=0.02 class=2  y = sgn(s) -> w[04] d[02] = y/16 xfer = table[45]
+117  path=4.0 route=1 op=2 r7=0.01 class=2  y = 0 -> w[02] d[06] <- xfer(steps 10c..112)
+118  path=4.0 route=1 op=2 r7=0.01 class=2  y = 0 -> w[06]
+119  path=0.0 route=0 op=1s r7=0.08 class=2  y = in[7].0 bus += y
+11a  path=0.0 route=0 op=4s r7=1.0a class=2  y = -s -> w[06] rd w[2] xfer = table[46]
+11b  path=0.0 route=3 op=2 r7=2.01 class=2  y = k*(r[52] + r[52]) -> w[3e] d[0a] <- xfer(steps 110..116) k=e148(-0.2400)
+11c  path=0.0 route=0 op=5s r7=0.0a class=3  rB=r[5a] -> w[02] d[18c]
+11d  path=0.0 route=0 op=1s r7=0.08 class=2  y = in[8].0 bus += y
+11e  path=0.1 route=0 op=4s r7=1.0a class=2  y = -s -> w[0a] rd w[2] d[0c9] xfer = table[47] k=35c3(+0.4200) b=4
+11f  path=4.0 route=1 op=2 r7=0.01 class=2  y = 0 -> w[05] d[05] <- xfer(steps 114..11a)
+120  path=4.0 route=1 op=2 r7=0.01 class=2  y = 0 -> w[09]
+121  path=0.0 route=0 op=1s r7=0.08 class=2  y = in[7].1 bus += y
+122  path=0.0 route=0 op=4s r7=1.0a class=2  y = -s -> w[05] rd w[1] xfer = table[48]
+123  path=1.2 route=0 op=3 r7=1.01 class=2  y = k*r[53] d[1b] <- xfer(steps 118..11e) k=3852(+0.4400) b=6   ; VCO2 Edge v3
+124  path=1.3 route=0 op=3 r7=1.01 class=2  y = k*r[52] k=3852(+0.4400) b=7   ; VCO2 Edge v4
+125  path=0.0 route=0 op=1s r7=0.08 class=2  y = in[8].1 bus += y
+126  path=0.1 route=0 op=4s r7=1.0a class=2  y = -s -> w[1b] rd w[1] xfer = table[49] k=35c3(+0.4200) b=5
+127  path=4.0 route=1 op=2 r7=0.01 class=2  y = 0 -> w[03] d[03] <- xfer(steps 11c..122)
+128  path=4.0 route=1 op=2 r7=0.01 class=2  y = 0 -> w[04]
+129  path=0.5 route=0 op=1s r7=0.08 class=2  y = in[7].2 bus += y k=f000(-0.1250) b=1
+12a  path=0.0 route=0 op=4s r7=1.0a class=2  y = -s -> w[03] rd w[1] xfer = table[4a]
+12b  path=0.6 route=0 op=7 r7=0.03 class=2  y = k*in -> w[06] d[04] <- xfer(steps 120..126) k=f000(-0.1250) b=1
+12c  path=1.1 route=0 op=4 r7=1.02 class=2  y = s -> w[0a] rd w[5]
+12d  path=0.0 route=0 op=1s r7=0.08 class=2  y = in[8].2 bus += y
+12e  path=0.2 route=0 op=4s r7=1.0a class=2  y = -s -> w[04] rd w[1] xfer = table[4b] k=35c3(+0.4200) b=6
+12f  path=4.0 route=1 op=2 r7=0.01 class=2  y = 0 -> w[02] d[02] <- xfer(steps 124..12a)
+130  path=4.0 route=1 op=2 r7=0.01 class=2  y = 0 -> w[0c]
+131  path=0.0 route=0 op=1s r7=0.08 class=2  y = in[7].3 bus += y
+132  path=0.0 route=0 op=4s r7=1.0a class=2  y = -s -> w[02] rd w[2] xfer = table[4c]
+133  path=0.0 route=0 op=7 r7=0.03 class=2  y = k*in -> w[05] rd w[6] d[05] <- xfer(steps 128..12e)
+134  path=1.2 route=0 op=4 r7=1.02 class=2  y = s -> w[1b] rd w[5]
+135  path=0.0 route=0 op=1s r7=0.08 class=2  y = in[8].3 bus += y
+136  path=0.4 route=0 op=4s r7=1.0a class=2  y = -s -> w[05] rd w[2] xfer = table[4d] k=35c3(+0.4200) b=7
+137  path=0.0 route=0 op=7 r7=0.03 class=2  y = k*in -> w[03] rd w[6] d[03] <- xfer(steps 12c..132)
+138  path=1.3 route=0 op=4 r7=1.02 class=2  y = s -> w[04] rd w[5]
+139  path=0.0 route=0 op=1s r7=0.08 class=2  y = in[7].4 bus += y
+13a  path=0.0 route=0 op=4s r7=1.0a class=2  y = -s -> w[03] rd w[4]
+13b  path=0.0 route=0 op=7 r7=0.03 class=2  y = k*in -> w[02] rd w[6] d[02] <- xfer(steps 130..136)
+13c  path=1.4 route=0 op=4 r7=1.02 class=2  y = s -> w[05] rd w[5]
+13d  path=0.0 route=0 op=1s r7=0.08 class=2  y = in[8].4 bus += y
+13e  path=0.0 route=0 op=4s r7=1.0a class=2  y = -s -> w[02] rd w[4] d[0ca]
+13f  path=0.0 route=0 op=7 r7=0.03 class=2  y = k*in -> w[03] rd w[6] d[084]
+140  path=1.1 route=0 op=4 r7=1.02 class=2  y = s -> w[02] rd w[5]
+141  path=0.0 route=2 op=3 r7=1.01 class=2  y = 0 -> w[2f]
+142  path=0.0 route=2 op=3 r7=1.01 class=2  y = 0
+143  path=0.0 route=2 op=3 r7=1.01 class=2  y = 0
+144  path=0.0 route=2 op=3 r7=1.01 class=2  y = 0
+145  path=0.0 route=2 op=3 r7=1.01 class=2  y = 0
+146  path=0.1 route=2 op=3 r7=1.01 class=2  y = k*r[5c] b=1   ; VCA Feedback
+147  path=0.0 route=0 op=0 r7=0.00 class=2  y = s + k*r[57] d[42] <- xfer(steps 13c..142) b=3   ; Ring Mod v0
+148  path=0.0 route=0 op=0 r7=0.00 class=2  y = s + k*r[4f] b=3   ; VCO1 Level v0
+149  path=0.0 route=0 op=0 r7=0.00 class=2  y = s + k*r[52] b=3   ; VCO2 Level v0
+14a  path=0.0 route=0 op=4 r7=1.02 class=2  y = s -> w[02] d[02] = y/16 b=3   ; Noise Level v0
+14b  path=0.0 route=2 op=3 r7=1.01 class=2  y = 0
+14c  path=0.0 route=0 op=0 r7=0.00 class=2  y = s + k*r[58] d[43] <- xfer(steps 141..147) b=4   ; Ring Mod v1
+14d  path=0.0 route=0 op=0 r7=0.00 class=2  y = s + k*r[50] b=4   ; VCO1 Level v1
+14e  path=0.0 route=0 op=0 r7=0.00 class=2  y = s + k*r[53] b=4   ; VCO2 Level v1
+14f  path=0.0 route=0 op=4 r7=1.02 class=2  y = s -> w[03] d[03] = y/16 b=4   ; Noise Level v1
+150  path=0.0 route=2 op=3 r7=1.01 class=2  y = 0
+151  path=0.0 route=0 op=0 r7=0.00 class=2  y = s + k*r[59] d[45] <- xfer(steps 146..14c) b=5   ; Ring Mod v2
+152  path=0.0 route=0 op=0 r7=0.00 class=2  y = s + k*r[51] b=5   ; VCO1 Level v2
+153  path=0.0 route=0 op=0 r7=0.00 class=2  y = s + k*r[54] b=5   ; VCO2 Level v2
+154  path=0.0 route=0 op=4 r7=1.02 class=2  y = s -> w[05] d[06] = y/16 b=5   ; Noise Level v2
+155  path=0.0 route=2 op=3 r7=1.01 class=2  y = 0
+156  path=0.0 route=0 op=0 r7=0.00 class=2  y = s + k*r[5a] d[45] <- xfer(steps 14b..151) b=6   ; Ring Mod v3
+157  path=0.0 route=0 op=0 r7=0.00 class=2  y = s + k*r[4d] d[085] b=6   ; VCO1 Level v3
+158  path=0.0 route=0 op=0 r7=0.00 class=2  y = s + k*r[55] b=6   ; VCO2 Level v3
+159  path=0.0 route=0 op=4 r7=1.02 class=2  y = s -> w[05] d[1b] = y/16 b=6   ; Noise Level v3
+15a  path=0.0 route=2 op=3 r7=1.01 class=2  y = 0
+15b  path=0.0 route=0 op=0 r7=0.00 class=2  y = s + k*r[57] d[4c] <- xfer(steps 150..156) b=7   ; Ring Mod v4
+15c  path=0.0 route=0 op=0 r7=0.00 class=2  y = s + k*r[4e] b=7   ; VCO1 Level v4
+15d  path=0.0 route=0 op=0 r7=0.00 class=2  y = s + k*r[56] d[0c2] b=7   ; VCO2 Level v4
+15e  path=0.0 route=0 op=4 r7=1.02 class=2  y = s -> w[0c] d[03] = y/16 b=7   ; Noise Level v4
+15f  path=0.0 route=0 op=5s r7=1.0a class=2  y = sgn(-s) -> w[02] d[0c] = y/16 k=2000(+0.2500) b=3
+160  path=0.0 route=0 op=5s r7=1.0a class=2  y = sgn(-s) -> w[03] d[1b] = y/16 k=2000(+0.2500) b=4
+161  path=0.0 route=0 op=5s r7=1.0a class=2  y = sgn(-s) -> w[06] d[1d] = y/16 k=2000(+0.2500) b=5
+162  path=0.0 route=0 op=5s r7=1.0a class=2  y = sgn(-s) -> w[1b] d[12] = y/16 k=2000(+0.2500) b=6
+163  path=0.0 route=0 op=5 r7=0.02 class=2  y = sgn(s) -> w[0d] b=3
+164  path=0.3 route=0 op=4 r7=0.02 class=2  y = s -> w[12] b=1
+165  path=4.0 route=2 op=0 r7=1.00 class=1  r[00] = k/256 k=7fff(+1.0000) b=3   ; VCF Cutoff v0
+166  path=6.0 route=3 op=1 r7=0.00 class=1  r[00] = k/256
+167  path=0.0 route=0 op=5s r7=1.0a class=2  y = sgn(-s) -> w[03] d[1e] = y/16 k=2000(+0.2500) b=7
+168  path=0.0 route=0 op=5 r7=1.02 class=2  y = sgn(s) -> w[0c] xfer = table[5a] k=0148(+0.0100) b=3
+169  path=0.0 route=0 op=5 r7=1.02 class=2  y = sgn(s) -> w[1b] k=0148(+0.0100) b=4
+16a  path=0.0 route=0 op=5 r7=1.02 class=2  y = sgn(s) -> w[1d] k=0148(+0.0100) b=5
+16b  path=0.0 route=0 op=5 r7=0.02 class=2  y = sgn(s) -> w[0e] b=4
+16c  path=0.0 route=0 op=4 r7=0.02 class=2  y = s -> w[13] rd w[3] xfer = table[5b]
+16d  path=4.0 route=2 op=0 r7=1.00 class=1  r[00] = k/256 d[03] <- xfer(steps 162..168) k=7fff(+1.0000) b=4   ; VCF Cutoff v1
+16e  path=6.0 route=3 op=1 r7=0.00 class=1  r[00] = k/256
+16f  path=0.0 route=0 op=5 r7=1.02 class=2  y = sgn(s) -> w[12] k=0148(+0.0100) b=6
+170  path=0.0 route=0 op=5 r7=1.02 class=2  y = sgn(s) -> w[1e] xfer = table[5c] k=0148(+0.0100) b=7
+171  path=1.1 route=0 op=7 r7=0.03 class=2  y = k*in -> w[03] d[03] <- xfer(steps 166..16c) k=7c00(+0.9688) b=3
+172  path=0.0 route=0 op=5 r7=0.02 class=2  y = sgn(s) -> w[0f] b=5
+173  path=0.0 route=0 op=4 r7=0.02 class=2  y = s -> w[14] rd w[3]
+174  path=4.0 route=2 op=0 r7=1.00 class=1  r[00] = k/256 xfer = table[5d] k=7fff(+1.0000) b=5   ; VCF Cutoff v2
+175  path=6.0 route=3 op=1 r7=0.00 class=1  r[00] = k/256 d[03] <- xfer(steps 16a..170)
+176  path=1.1 route=0 op=5 r7=1.02 class=2  y = sgn(s) -> w[03] d[086]
+177  path=0.0 route=0 op=3 r7=0.01 class=2  y = k*in[11].0 d[13] = y/16 k=4000(+0.5000)
+178  path=1.2 route=0 op=7 r7=0.03 class=2  y = k*in -> w[03] xfer = table[5e] k=7c00(+0.9688) b=4
+179  path=0.0 route=0 op=3 r7=1.01 class=2  y = 0 d[03] = y/16
+17a  path=0.0 route=0 op=5 r7=0.02 class=2  y = sgn(s) -> w[10] d[14] <- xfer(steps 16f..175) b=6
+17b  path=0.1 route=0 op=4 r7=0.02 class=2  y = s -> w[15] rd w[3] k=c000(-0.5000) b=3
+17c  path=4.0 route=2 op=0 r7=1.00 class=1  r[00] = k/256 xfer = table[5f] k=7fff(+1.0000) b=6   ; VCF Cutoff v3
+17d  path=6.0 route=3 op=1 r7=0.00 class=1  r[00] = k/256 d[14] <- xfer(steps 172..178)
+17e  path=1.4 route=0 op=5 r7=1.02 class=2  y = sgn(s) -> w[14] d[0c3]
+17f  path=1.2 route=0 op=5 r7=2.02 class=2  y = sgn(s) -> w[03]
+180  path=1.5 route=2 op=5 r7=2.02 class=2  y = sgn(s) -> w[03] xfer = table[60] k=9df8(-0.7659)
+181  path=1.4 route=0 op=7 r7=0.03 class=2  y = k*in -> w[14] d[07] <- xfer(steps 176..17c) k=7c00(+0.9688) b=5
+182  path=0.0 route=0 op=3 r7=1.01 class=2  y = 0 -> w[07] d[0b] = y/16
+183  path=0.0 route=0 op=5 r7=0.02 class=2  y = sgn(s) -> w[11] b=7
+184  path=0.0 route=0 op=4 r7=0.02 class=2  y = s -> w[0b] rd w[3] xfer = table[61]
+185  path=4.0 route=2 op=0 r7=1.00 class=1  r[00] = k/256 d[0c] <- xfer(steps 17a..180) k=7fff(+1.0000) b=7   ; VCF Cutoff v4
+186  path=6.0 route=3 op=1 r7=0.00 class=1  r[00] = k/256
+187  path=0.1 route=1 op=2 r7=1.01 class=2  y = 0 -> w[0c] k=c000(-0.5000) b=4
+188  path=0.0 route=0 op=0 r7=1.00 class=2  y = s + k*(r[51] + in[11].0) xfer = table[62] k=8000(-1.0000)
+189  path=1.8 route=0 op=7 r7=0.03 class=2  y = k*in -> w[0c] d[0c] <- xfer(steps 17e..184) k=7c00(+0.9688) b=6
+18a  path=0.0 route=0 op=3 r7=0.01 class=2  y = k*in[11].1 d[14] = y/16 k=4000(+0.5000)
+18b  path=1.3 route=0 op=5 r7=2.02 class=2  y = sgn(s) -> w[0b]
+18c  path=0.0 route=0 op=3 r7=0.01 class=2  y = k*in[10].0 xfer = table[63] k=4000(+0.5000)
+18d  path=5.9 route=1 op=0 r7=1.00 class=2  y = s d[07] <- xfer(steps 182..188)
+18e  path=1.6 route=2 op=5 r7=2.02 class=2  y = sgn(s) -> w[0b] k=9df8(-0.7659)
+18f  path=1.1 route=0 op=5 r7=1.02 class=2  y = sgn(s) -> w[07]
+190  path=1.a route=0 op=7 r7=0.03 class=2  y = k*in -> w[07] xfer = table[64] k=7c00(+0.9688) b=7
+191  path=0.0 route=1 op=2 r7=1.01 class=2  y = 0 -> w[1b] d[07] <- xfer(steps 186..18c)
+192  path=0.0 route=0 op=0 r7=1.00 class=2  y = s + k*(r[52] + in[11].1) k=8000(-1.0000)
+193  path=0.1 route=0 op=3 r7=1.01 class=2  y = 0 d[0b] = y/16 k=c000(-0.5000) b=5
+194  path=0.0 route=0 op=3 r7=0.01 class=2  y = k*in[10].1 xfer = table[65] older k=4000(+0.5000)
+195  path=5.b route=1 op=0 r7=1.00 class=2  y = s d[15] <- xfer(steps 18a..190)
+196  path=0.0 route=0 op=3 r7=0.01 class=2  y = k*in[11].2 d[1b] = y/16 k=4000(+0.5000)
+197  path=1.4 route=0 op=5 r7=2.02 class=2  y = sgn(s) -> w[0b]
+198  path=1.7 route=2 op=5 r7=2.02 class=2  y = sgn(s) -> w[0b] xfer = table[66] k=9df8(-0.7659)
+199  path=0.0 route=1 op=2 r7=1.01 class=2  y = 0 -> w[1d] d[0b] <- xfer(steps 18e..194)
+19a  path=0.0 route=0 op=0 r7=1.00 class=2  y = s + k*(r[53] + in[11].2) k=8000(-1.0000)
+19b  path=1.1 route=0 op=5 r7=1.02 class=2  y = sgn(s) -> w[0c]
+19c  path=0.0 route=0 op=3 r7=0.01 class=2  y = k*in[10].2 xfer = table[67] older k=4000(+0.5000)
+19d  path=5.9 route=1 op=0 r7=1.00 class=2  y = s d[0c] <- xfer(steps 192..198)
+19e  path=0.0 route=0 op=6s r7=0.0b class=2  y = 0 -> w[15] rd w[9] d[0cb]
+19f  path=0.0 route=0 op=4s r7=1.0a class=2  y = -s -> w[0b] rd w[9] d[087]
+1a0  path=0.0 route=0 op=3 r7=0.01 class=2  y = k*in[11].3 d[15] = y/16 xfer = table[68] k=4000(+0.5000)
+1a1  path=1.8 route=0 op=5 r7=1.02 class=2  y = sgn(s) -> w[07] d[0c] <- xfer(steps 196..19c)
+1a2  path=0.0 route=0 op=3 r7=1.01 class=2  y = 0 d[0c] = y/16
+1a3  path=0.1 route=0 op=6s r7=0.0b class=2  y = 0 -> w[0c] rd w[b] k=c000(-0.5000) b=6
+1a4  path=0.0 route=0 op=4s r7=1.0a class=2  y = -s -> w[0c] rd w[b] xfer = table[69] older
+1a5  path=5.a route=1 op=2 r7=1.01 class=2  y = 0 -> w[13] d[12] <- xfer(steps 19a..1a0)
+1a6  path=1.2 route=0 op=5 r7=2.02 class=2  y = sgn(s) -> w[0c]
+1a7  path=0.0 route=1 op=2 r7=1.01 class=2  y = 0 -> w[12]
+1a8  path=0.0 route=0 op=0 r7=1.00 class=2  y = s + k*(r[54] + in[11].3) xfer = table[6a] k=8000(-1.0000)
+1a9  path=1.8 route=2 op=5 r7=2.02 class=2  y = sgn(s) -> w[0c] d[0c] <- xfer(steps 19e..1a4) k=9df8(-0.7659)
+1aa  path=0.0 route=0 op=3 r7=1.01 class=2  y = 0 d[0c] = y/16
+1ab  path=0.0 route=0 op=6s r7=0.0b class=2  y = 0 -> w[12] rd w[9]
+1ac  path=0.1 route=0 op=4s r7=1.0a class=2  y = -s -> w[0c] rd w[9] xfer = table[6b] older k=c000(-0.5000) b=7
+1ad  path=5.b route=1 op=2 r7=1.01 class=2  y = 0 -> w[14] d[12] <- xfer(steps 1a2..1a8)
+1ae  path=0.0 route=0 op=3 r7=0.01 class=2  y = k*in[11].4 d[13] = y/16 k=4000(+0.5000)
+1af  path=1.3 route=0 op=5 r7=2.02 class=2  y = sgn(s) -> w[0c]
+1b0  path=1.9 route=2 op=5 r7=2.02 class=2  y = sgn(s) -> w[0c] xfer = table[6c] k=9df8(-0.7659)
+1b1  path=0.0 route=0 op=3 r7=0.01 class=2  y = k*in[10].3 d[0c] <- xfer(steps 1a6..1ac) k=4000(+0.5000)
+1b2  path=5.a route=1 op=0 r7=1.00 class=2  y = s
+1b3  path=0.0 route=0 op=6s r7=0.0b class=2  y = 0 -> w[12] rd w[a]
+1b4  path=0.0 route=0 op=4s r7=1.0a class=2  y = -s -> w[0c] rd w[a] xfer = table[6d] older
+1b5  path=0.0 route=1 op=2 r7=1.01 class=2  y = 0 -> w[1e] d[0c] <- xfer(steps 1aa..1b0)
+1b6  path=0.0 route=0 op=0 r7=1.00 class=2  y = s + k*(r[55] + in[11].4) k=8000(-1.0000)
+1b7  path=0.0 route=0 op=1s r7=0.08 class=2  y = in[12].0 bus += y
+1b8  path=0.0 route=0 op=0s r7=1.08 class=2  y = -s xfer = table[6e]
+1b9  path=0.0 route=0 op=3 r7=0.01 class=2  y = k*in[10].4 d[0c] <- xfer(steps 1ae..1b4) k=4000(+0.5000)
+1ba  path=5.1 route=1 op=0 r7=1.00 class=2  y = s
+1bb  path=0.0 route=0 op=6s r7=0.0b class=2  y = 0 -> w[0c] rd w[b]
+1bc  path=0.0 route=0 op=4s r7=1.0a class=2  y = -s -> w[0c] rd w[b] xfer = table[6f] older
+1bd  path=0.0 route=0 op=1s r7=0.08 class=2  y = r[42] bus += y d[12] <- xfer(steps 1b2..1b8)
+1be  path=0.0 route=0 op=0s r7=1.08 class=2  y = -s d[0cc]
+1bf  path=0.0 route=0 op=1s r7=0.08 class=2  y = in[12].1 bus += y
+1c0  path=0.0 route=0 op=0s r7=1.08 class=2  y = -s xfer = table[70]
+1c1  path=1.5 route=1 op=7 r7=2.03 class=2  y = k*in -> w[01] d[01] <- xfer(steps 1b6..1bc) k=745a(+0.9090)
+1c2  path=1.a route=1 op=7 r7=2.03 class=2  y = k*in -> w[02] k=745a(+0.9090)
+1c3  path=0.0 route=0 op=6s r7=0.0b class=2  y = 0 -> w[12] rd w[a]
+1c4  path=0.4 route=0 op=4s r7=1.0a class=2  y = -s -> w[01] rd w[a] xfer = table[71] older k=7fff(+1.0000) b=3
+1c5  path=5.6 route=1 op=2 r7=1.01 class=2  y = 0 -> w[1b] d[01] <- xfer(steps 1ba..1c0)
+1c6  path=0.0 route=0 op=1s r7=0.08 class=2  y = r[43] bus += y
+1c7  path=0.0 route=0 op=0s r7=1.08 class=2  y = -s
+1c8  path=0.0 route=0 op=1s r7=0.08 class=2  y = r[47] bus += y xfer = table[72]
+1c9  path=0.4 route=0 op=0s r7=1.08 class=2  y = -s d[01] <- xfer(steps 1be..1c4)
+1ca  path=1.b+ route=1 op=7 r7=2.03 class=2  y = k*in -> w[03] k=745a(+0.9090)
+1cb  path=0.1 route=0 op=6s r7=0.0b class=2  y = 0 -> w[01] rd w[1] k=7fff(+1.0000) b=4
+1cc  path=0.0 route=0 op=4s r7=1.0a class=2  y = -s -> w[01] rd w[1] xfer = table[73] older
+1cd  path=5.1 route=1 op=2 r7=1.01 class=2  y = 0 -> w[15] d[01] <- xfer(steps 1c2..1c8)
+1ce  path=0.0 route=0 op=1s r7=0.08 class=2  y = r[48] bus += y
+1cf  path=0.4 route=0 op=0s r7=1.08 class=2  y = -s
+1d0  path=1.2+ route=1 op=7 r7=2.03 class=2  y = k*in -> w[0b] xfer = table[74] k=745a(+0.9090)
+1d1  path=1.5 route=1 op=7 r7=2.03 class=2  y = k*in -> w[0c] d[01] <- xfer(steps 1c6..1cc) k=745a(+0.9090)
+1d2  path=0.0 route=0 op=3 r7=1.01 class=2  y = 0
+1d3  path=0.0 route=0 op=6s r7=0.0b class=2  y = 0 -> w[01] rd w[6]
+1d4  path=0.0 route=0 op=4s r7=1.0a class=2  y = -s -> w[01] rd w[6] d[0c1] xfer = table[75] older
+1d5  path=5.3 route=1 op=2 r7=1.01 class=2  y = 0 -> w[13] d[02] <- xfer(steps 1ca..1d0)
+1d6  path=0.0 route=0 op=1s r7=0.08 class=2  y = in[12].2 bus += y
+1d7  path=0.0 route=0 op=0s r7=1.08 class=2  y = -s d[081]
+1d8  path=1.6 route=1 op=6 r7=2.03 class=1  r[00] = k/256 xfer = table[76] k=0da3(+0.1065)
+1d9  path=0.0 route=0 op=1s r7=0.08 class=2  y = r[44] bus += y d[02] <- xfer(steps 1ce..1d4)
+1da  path=0.0 route=0 op=0s r7=1.08 class=2  y = -s
+1db  path=0.0 route=0 op=6s r7=0.0b class=2  y = 0 -> w[02] rd w[1]
+1dc  path=0.0 route=0 op=4s r7=1.0a class=2  y = -s -> w[02] rd w[1] xfer = table[77] older
+1dd  path=0.0 route=0 op=3 r7=1.01 class=2  y = 0 d[03] <- xfer(steps 1d2..1d8)
+1de  path=0.0 route=0 op=1s r7=0.08 class=2  y = in[12].3 bus += y
+1df  path=0.0 route=0 op=0s r7=1.08 class=2  y = -s
+1e0  path=0.0 route=0 op=7 r7=1.03 class=2  y = k*d[02] -> w[01] rd w[6]
+1e1  path=0.0 route=0 op=1s r7=0.08 class=2  y = r[45] bus += y d[03] <- xfer(steps 1d6..1dc)
+1e2  path=0.1 route=0 op=0s r7=1.08 class=2  y = -s k=7fff(+1.0000) b=5
+1e3  path=0.0 route=0 op=6s r7=0.0b class=2  y = 0 -> w[03] rd w[3]
+1e4  path=0.0 route=0 op=4s r7=1.0a class=2  y = -s -> w[03] rd w[3]
+1e5  path=0.1 route=0 op=1s r7=0.08 class=2  y = r[49] bus += y k=7fff(+1.0000) b=6
+1e6  path=0.4 route=0 op=0s r7=1.08 class=2  y = -s
+1e7  path=0.0+ route=0 op=1s r7=0.08 class=2  y = (r[49] + in[12].4) bus += y
+1e8  path=0.0 route=0 op=0s r7=1.08 class=2  y = -s
+1e9  path=0.0 route=0 op=1s r7=0.08 class=2  y = r[4a] bus += y
+1ea  path=0.4 route=0 op=0s r7=1.08 class=2  y = -s
+1eb  path=0.0+ route=0 op=1s r7=0.08 class=2  y = (r[4a] + r[46]) bus += y
+1ec  path=0.1 route=0 op=0s r7=1.08 class=2  y = -s k=7fff(+1.0000) b=7
+1ed  path=0.0 route=0 op=5 r7=0.02 class=2  y = sgn(s) -> w[01] b=1   ; VCA Mod Dp
+1ee  path=1.1 route=1 op=4 r7=2.02 class=2  y = s -> w[02] b=1   ; VCA Mod Dp
+1ef  path=0.0 route=0 op=1s r7=0.08 class=2  y = r[4b] bus += y
+1f0  path=0.4 route=0 op=0s r7=1.08 class=2  y = -s
+1f1  path=0.0+ route=0 op=7 r7=0.03 class=2  y = k*in -> w[01] b=1   ; VCF Mod Dp
+1f2  path=0.0 route=0 op=4 r7=1.02 class=2  y = s -> w[02] b=1   ; VCF Mod Dp
+1f3  path=0.0 route=0 op=3 r7=1.01 class=2  y = 0
+1f4  path=0.0 route=0 op=3 r7=1.01 class=2  y = 0
+1f5  path=0.0 route=0 op=3 r7=1.01 class=2  y = 0
+1f6  path=0.0 route=0 op=3 r7=1.01 class=2  y = 0
+1f7  path=0.0 route=0 op=3 r7=1.01 class=2  y = 0 d[092]
+1f8  path=0.0 route=0 op=3 r7=1.01 class=2  y = 0
+1f9  path=0.0 route=0 op=3 r7=1.01 class=2  y = 0
+1fa  path=0.0 route=0 op=3 r7=1.01 class=2  y = 0
+1fb  path=0.0 route=1 op=3 r7=1.01 class=2  y = k*r[4d] d[03] = y/8 k=7fff(+1.0000) b=3
+1fc  path=0.0 route=1 op=3 r7=1.01 class=2  y = k*r[4e] d[2e] = y/8 k=7fff(+1.0000) b=4
+1fd  path=0.0 route=1 op=3 r7=1.01 class=2  y = k*r[4f] d[1b] = y/8 k=7fff(+1.0000) b=5
+1fe  path=0.0 route=0 op=3 r7=0.01 class=2  y = k*r[4d] d[0cb] k=7fff(+1.0000) b=6
+1ff  path=0.0 route=0 op=0 r7=1.00 class=2  y = s + k*r[4e] d[2f] = y/16 k=7fff(+1.0000) b=7

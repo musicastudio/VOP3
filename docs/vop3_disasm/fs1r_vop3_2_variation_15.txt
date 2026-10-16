@@ -1,0 +1,96 @@
+1a0  path=0.1 route=0 op=4 r7=0.02 class=0  
+1a1  path=0.0 route=0 op=0 r7=0.00 class=0  -> w[06] d[002] dram[68] = y/16
+1a2  path=0.0 route=0 op=0 r7=0.00 class=0  rB=r[0c] -> w[06]
+1a3  path=0.0 route=0 op=0 r7=0.00 class=0  xfer = dram[68] b=124
+1a4  nop
+1a5  path=0.0 route=0 op=0 r7=0.00 class=0  xfer = dram[69] older b=128
+1a6  nop
+1a7  path=0.0 route=0 op=0 r7=0.00 class=0  rB=r[02] -> w[01] b=128
+1a8  path=0.1 route=0 op=4 r7=0.02 class=0  rA=r[01] rB=r[02] -> w[01] d[002] dram[6a] = y/16 b=64
+1a9  path=0.1 route=0 op=0 r7=0.00 class=0  rA=r[01] -> w[01] d[002] dram[6a] = y/16 b=12
+1aa  path=0.1 route=0 op=0 r7=0.00 class=0  
+1ab  path=0.0 route=0 op=0s r7=0.0c class=0  
+1ac  path=0.0 route=0 op=0 r7=0.00 class=0  d[00c]
+1ad  path=0.6 route=0 op=0 r7=0.00 class=0  d[00c] xfer = dram[6b] older b=123
+1ae  path=0.6 route=0 op=0 r7=0.00 class=0  rA=r[03] d[006] xfer = dram[6b] older b=34
+1af  path=0.0 route=0 op=4 r7=0.06 class=0   b=128
+1b0  nop
+1b1  path=0.0 route=0 op=0 r7=0.00 class=0  -> w[01] b=192
+1b2  path=0.1 route=0 op=4 r7=0.02 class=0  rA=r[01] rB=r[02] -> w[01] d[002] dram[6c] = y/16 b=128
+1b3  path=0.0 route=0 op=0 r7=0.00 class=0  dram[6c] = y/16 b=12
+1b4  path=0.1 route=0 op=0 r7=0.00 class=0  rA=r[01] d[006]
+1b5  path=0.1 route=0 op=4 r7=0.02 class=0  rA=r[01] rB=r[02] -> w[01] d[002] dram[6d] = y/16
+1b6  path=0.1 route=0 op=0 r7=0.00 class=0  rA=r[01] rB=r[02] -> w[01] d[002] dram[6d] = y/16
+1b7  path=0.0 route=0 op=4 r7=0.02 class=0  rB=r[02] b=125
+1b8  nop
+1b9  path=0.0 route=0 op=0 r7=0.00 class=0  rB=r[02] -> w[01]
+1ba  nop
+1bb  path=0.0 route=0 op=0 r7=0.00 class=0  rB=r[02] -> w[01]
+1bc  path=0.0 route=0 op=0 r7=0.00 class=0  rB=r[06] -> w[03] dram[6f] = y/16 b=64
+1bd  nop
+1be  nop
+1bf  path=0.0 route=0 op=4 r7=0.02 class=0  rB=r[02] -> w[01] b=2
+1c0  path=0.1 route=0 op=0 r7=0.00 class=0  rA=r[01] d[002] dram[70] = y/16
+1c1  path=0.0 route=0 op=0 r7=0.00 class=0  rB=r[02] -> w[01]
+1c2  path=0.1 route=0 op=4 r7=0.02 class=0  rA=r[01] rB=r[02] -> w[01] d[002] dram[70] = y/16
+1c3  path=0.0 route=0 op=0 r7=0.00 class=0  dram[70] = y/16 b=64
+1c4  path=0.0 route=0 op=4 r7=0.02 class=0  -> w[01] b=192
+1c5  path=0.0 route=0 op=0 r7=0.00 class=0  rA=r[01] d[002] b=192
+1c6  path=0.0 route=0 op=0 r7=0.00 class=0  d[006] b=254
+1c7  path=0.0 route=0 op=0 r7=0.00 class=0  xfer = dram[71]
+1c8  path=0.0 route=0 op=0 r7=0.00 class=0  rB=r[02]
+1c9  path=0.1 route=0 op=4 r7=0.02 class=0  rB=r[02] -> w[01] d[002]
+1ca  path=0.1 route=0 op=0 r7=0.00 class=0  -> w[01] d[002] dram[72] = y/16 b=28
+1cb  path=0.1 route=0 op=4 r7=0.02 class=0  rA=r[01] dram[72] = y/16 b=124
+1cc  path=0.0 route=0 op=0 r7=0.00 class=0  d[002]
+1cd  path=0.0 route=0 op=0 r7=0.00 class=0  rA=r[01]
+1ce  path=0.0 route=0 op=0 r7=0.00 class=0  -> w[01] b=80
+1cf  path=0.1 route=0 op=4 r7=0.02 class=0  rA=r[01] d[002] dram[73] = y/16
+1d0  path=0.0 route=0 op=0 r7=0.00 class=0  rB=r[06] -> w[03] xfer = dram[74] b=64
+1d1  path=0.0 route=0 op=4 r7=0.02 class=0  rB=r[02] -> w[01]
+1d2  path=0.1 route=0 op=0 r7=0.00 class=0  rA=r[01] -> w[01]
+1d3  path=0.1 route=0 op=0 r7=0.00 class=0  d[002]
+1d4  path=0.0 route=0 op=0 r7=0.00 class=0  rA=r[01] d[002]
+1d5  nop
+1d6  path=0.0 route=0 op=0 r7=0.00 class=0  rB=r[02] -> w[01]
+1d7  nop
+1d8  path=0.0 route=0 op=4 r7=0.02 class=0  rB=r[02] -> w[01] b=17
+1d9  path=0.1 route=0 op=4 r7=0.06 class=0  d[002] dram[76] = y/16 b=128
+1da  path=0.0 route=0 op=0 r7=0.00 class=0  rB=r[02] -> w[01] d[002] b=64
+1db  path=0.1 route=0 op=0 r7=0.00 class=0  rA=r[01] d[002] dram[76] = y/16 b=12
+1dc  path=0.1 route=0 op=4 r7=0.02 class=0  rA=r[01] d[002] dram[77] = y/16
+1dd  nop
+1de  nop
+1df  nop
+1e0  path=0.0 route=0 op=0 r7=0.00 class=0  rA=r[01] d[002]
+1e1  path=0.0 route=0 op=0 r7=0.00 class=0  -> w[01] dram[78] = y/16
+1e2  path=0.0 route=0 op=0 r7=0.00 class=0  rA=r[01] -> w[01] b=16
+1e3  path=0.1 route=0 op=0 r7=0.00 class=0  dram[78] = y/16 b=64
+1e4  path=0.0 route=0 op=0 r7=0.00 class=0  rB=r[02] b=125
+1e5  path=0.0 route=0 op=0 r7=0.00 class=0  rB=r[06] b=128
+1e6  nop
+1e7  path=0.0 route=0 op=0 r7=0.00 class=0  d[006] b=2
+1e8  nop
+1e9  nop
+1ea  path=0.1 route=0 op=4 r7=0.02 class=0  rA=r[01] -> w[01] d[002] dram[7a] = y/16 b=68
+1eb  path=0.1 route=0 op=0 r7=0.00 class=0  -> w[01] dram[7a] = y/16 b=64
+1ec  path=0.1 route=0 op=4 r7=0.02 class=0  rB=r[06] -> w[03] dram[7b] = y/16 b=64
+1ed  path=0.3 route=0 op=0 r7=0.00 class=0  xfer = dram[7b] b=220
+1ee  path=0.0 route=0 op=0 r7=0.00 class=0  rA=r[01] d[002] b=190
+1ef  path=0.0 route=0 op=0 r7=0.00 class=0  rB=r[02] dram[7b] = y/16
+1f0  path=0.0 route=0 op=0 r7=0.00 class=0  rB=r[02] -> w[01]
+1f1  path=0.0 route=0 op=0 r7=0.00 class=0  -> w[01]
+1f2  path=0.0 route=0 op=0 r7=0.00 class=0  
+1f3  path=0.0 route=0 op=0 r7=0.00 class=0  dram[7c] = y/16
+1f4  nop
+1f5  path=0.1 route=0 op=4 r7=0.02 class=0  rA=r[01] d[002] dram[7d] = y/16
+1f6  path=0.1 route=0 op=0 r7=0.00 class=0  rA=r[01] d[006] b=192
+1f7  path=0.0 route=0 op=0 r7=0.00 class=0  d[002] b=192
+1f8  nop
+1f9  nop
+1fa  path=0.3 route=0 op=0 r7=0.00 class=0  rA=r[03] d[006]
+1fb  path=0.0 route=0 op=4s r7=0.0a class=0  -> w[05] dram[7e] = y/16
+1fc  path=0.5 route=0 op=0 r7=0.00 class=0  rB=r[0a] d[00a] b=29
+1fd  path=0.0 route=0 op=4s r7=0.0a class=0  rA=r[05] -> w[05] b=1
+1fe  path=0.5 route=0 op=0 r7=0.00 class=0  rB=r[0a] d[00a]
+1ff  path=0.0 route=0 op=0 r7=0.00 class=0  rA=r[05] rB=r[02] -> w[01]

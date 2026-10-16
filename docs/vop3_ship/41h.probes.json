@@ -1,0 +1,57 @@
+{
+ "configs": {
+  "ins_flanger_voko": {
+   "slot": "ins",
+   "type": 3,
+   "voice": "sine",
+   "hz": 1000.0,
+   "level": 90,
+   "block": "0011000a00090018003100640003000000002204450a4040122e122e122e122e001f0064000700320040000000060001001a0040002e0040000300450004000800400014003e00320040006300270040000a007c0000003e01404014404014034029407f4a0c0701422401442f070000",
+   "src": "Vokodrone"
+  }
+ },
+ "probes": [
+  {
+   "config": "ins_flanger_voko",
+   "name": "voko_t1b4",
+   "steps": {
+    "0d0": [
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "1b4": [
+     0,
+     22784,
+     51332,
+     32768,
+     48256
+    ]
+   },
+   "detail": "0d0 nop; step 1b4 also writes its result (the delay index source) to m[11] (R DAC)"
+  },
+  {
+   "config": "ins_flanger_voko",
+   "name": "voko_t1d3",
+   "steps": {
+    "0d0": [
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "1d3": [
+     1,
+     23040,
+     51396,
+     32768,
+     48512
+    ]
+   },
+   "detail": "0d0 nop; step 1d3 also writes its result (the delay index source) to m[11] (R DAC)"
+  }
+ ]
+}

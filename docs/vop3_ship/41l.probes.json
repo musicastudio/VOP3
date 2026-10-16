@@ -1,0 +1,213 @@
+{
+ "configs": {
+  "var_flanger": {
+   "slot": "var",
+   "type": 3,
+   "voice": "sine",
+   "hz": 1000.0,
+   "level": 90,
+   "block": "0019000a001c0006002e0d240d74000000000d034a074040000e000e00640011004a001c0040002e0040000000000000001c0004002e0040000c0019004a00000046001c0040002e0040007f002e0040000a002d00370040024040034040400440282e79400c07004022074034070011",
+   "src": "P2"
+  },
+  "var_chorus": {
+   "slot": "var",
+   "type": 1,
+   "voice": "sine",
+   "hz": 1000.0,
+   "level": 90,
+   "block": "0003000a00080000003c00000000000000000b043b084000000300780043006a004a001c0040002e0046000000000000001c004000010040000200130048003c0051000a001d003c000a007f007f0000000000000001000004401c014040121c40001e7f400c070040160e4034070011",
+   "src": "P3"
+  }
+ },
+ "probes": [
+  {
+   "config": "var_flanger",
+   "name": "var_flanger_t16c",
+   "steps": {
+    "0d0": [
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "16c": [
+     0,
+     22784,
+     51332,
+     32768,
+     48640
+    ]
+   },
+   "detail": "0d0 nop; step 16c also writes its result to m[11] (R DAC)"
+  },
+  {
+   "config": "var_flanger",
+   "name": "var_flanger_t182",
+   "steps": {
+    "0d0": [
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "182": [
+     0,
+     23040,
+     51332,
+     32768,
+     48896
+    ]
+   },
+   "detail": "0d0 nop; step 182 also writes its result to m[11] (R DAC)"
+  },
+  {
+   "config": "var_flanger",
+   "name": "var_flanger_t124",
+   "steps": {
+    "0d0": [
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "124": [
+     0,
+     22784,
+     51332,
+     32768,
+     48640
+    ]
+   },
+   "detail": "0d0 nop; step 124 also writes its result to m[11] (R DAC)"
+  },
+  {
+   "config": "var_flanger",
+   "name": "var_flanger_t13a",
+   "steps": {
+    "0d0": [
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "13a": [
+     0,
+     23040,
+     51332,
+     32768,
+     48896
+    ]
+   },
+   "detail": "0d0 nop; step 13a also writes its result to m[11] (R DAC)"
+  },
+  {
+   "config": "var_flanger",
+   "name": "var_flanger_t158",
+   "steps": {
+    "0d0": [
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "158": [
+     0,
+     124,
+     51328,
+     4480,
+     16392
+    ]
+   },
+   "detail": "0d0 nop; step 158 also writes its result to m[11] (R DAC)"
+  },
+  {
+   "config": "var_chorus",
+   "name": "var_chorus_t16c",
+   "steps": {
+    "0d0": [
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "16c": [
+     0,
+     22784,
+     51332,
+     32768,
+     48640
+    ]
+   },
+   "detail": "0d0 nop; step 16c also writes its result to m[11] (R DAC)"
+  },
+  {
+   "config": "var_chorus",
+   "name": "var_chorus_t182",
+   "steps": {
+    "0d0": [
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "182": [
+     0,
+     23040,
+     51332,
+     32768,
+     48896
+    ]
+   },
+   "detail": "0d0 nop; step 182 also writes its result to m[11] (R DAC)"
+  },
+  {
+   "config": "var_chorus",
+   "name": "var_chorus_t124",
+   "steps": {
+    "0d0": [
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "124": [
+     0,
+     22784,
+     51332,
+     32768,
+     48640
+    ]
+   },
+   "detail": "0d0 nop; step 124 also writes its result to m[11] (R DAC)"
+  },
+  {
+   "config": "var_chorus",
+   "name": "var_chorus_t13a",
+   "steps": {
+    "0d0": [
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "13a": [
+     0,
+     23040,
+     51332,
+     32768,
+     48896
+    ]
+   },
+   "detail": "0d0 nop; step 13a also writes its result to m[11] (R DAC)"
+  }
+ ]
+}

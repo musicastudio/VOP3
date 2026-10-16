@@ -1,0 +1,254 @@
+000 p = c000 * m1f ; r23 = p ; mem_r +of00
+001 p = c001 * r08 ; r32 = p
+002 p = (c002 << 8) ; m08 = mr
+003 p =s (c003 << 8) + (p >> 15) ; r21 = p ; mem_r +of01
+004 p = (c004 << 8)
+005 p =s (c005 << 8) + (p >> 15) ; m09 = mr ; r22 = p
+006 p =s c006 * r21 ; m06 = p ; mem_r +of02
+007 p = c007 * r21 ; r24 = p
+008 p =s c008 * r22 ; m07 = p
+009 p =s c009 * m06 ; m0a = mr ; idx = p ; mem_r +of03
+00a p = c00a * r22 ; r21 = p
+00b p = c00b * r21 ; m06 = mr ; r25 = p ; t1 = p
+00c p =_ c00c * r21 - m06 ; r22 = p ; mem_r +of04+idx
+00d p =_ c00d * r22 - m07 ; r26 = p
+00e p = c00e * r22 ; m07 = mr ; r27 = p
+00f p =s c00f * m07 ; mw = p ; idx = p ; mem_1r +of05+idx
+010 p = c010 * r32 ; r28 = p
+011 p =s c011 * r09 ; m07 = mr ; r31 = p ; t2 = p
+012 p =s c012 * r24 ; idx = p ; mem_r +of06
+013 p = t1 * m07 - m07
+014 p =s t1 * m07 - p ; m07 = mr ; r24 = p ; t1 = p
+015 p = c015 * r29 - r29 ; t0 = c015 ; mem_1r +of07
+016 p =s t0 * r23 - p ; r29 = p
+017 p =s r23 - p ; m07 = mr ; r21 = p ; t4 = c017
+018 p =s c018 * r21 ; mw = p ; idx = p ; mem_r +of08+idx
+019 p = t2 * m07 - m07
+01a p =s t2 * m07 - p ; m07 = mr ; r21 = p ; t2 = p
+01b p =s (c01b * r21) << 4 ; r21 = p ; mem_1r +of09+idx
+01c p = c01c * r24 - r24 ; t0 = c01c
+01d p =s t0 * r21 - p ; m08 = mr ; r23 = p
+01e p = c01e * r2b ; mem_r +of0a
+01f p =s c01f * m08 + p ; r2b = p
+020 p =s c020 * r22 ; m07 = mr ; idx = p
+021 p = t1 * m07 - m07 ; mem_1r +of0b
+022 p =s t1 * m08 - p ; r22 = p ; t1 = p
+023 p = c023 * r01 - r01 ; m08 = mr ; t3 = c023
+024 p =s t3 * r23 - p ; r01 = p ; mem_r +of0c+idx
+025 p =s c025 * r26 ; mw = p ; idx = p
+026 p = t2 * m07 - m07 ; m07 = mr
+027 p =s t2 * m08 - p ; r22 = p ; t2 = p ; mem_1r +of0d+idx
+028 p =s c028 * r01 ; r23 = p
+029 p = t0 * r22 - r22 ; m07 = mr
+02a p =s t0 * r22 - p ; r22 = p ; mem_r +of0e
+02b p = t1 * m07 - m07
+02c p =s t1 * m07 - p ; m07 = mr ; r25 = p
+02d p =s c02d * r25 ; idx = p ; mem_1r +of0f
+02e p =s c02e * r27 ; mw = p ; idx = p
+02f p = (c02f << 8) ; m08 = mr ; r26 = p ; t1 = p
+030 p = c030 * r21 ; r33 = p ; t3 = p ; mem_r +of10+idx
+031 p = c031 * r02 - r02 ; t5 = c031
+032 p =s t5 * r22 - p ; m07 = mr ; r02 = p
+033 p = t2 * m07 - m07 ; mem_1r +of11+idx
+034 p =s t2 * m08 - p ; r21 = p
+035 m08 = mr
+036 p = (c036 << 8) ; r1b = p ; mem_r +of12
+037 
+038 p = t1 * m07 - m07 ; m07 = mr
+039 p =s t1 * m08 - p ; r27 = p ; mem_1r +of13
+03a p =s (c03a << 8) + r1b ; r1b = p
+03b p =s c03b * r02 ; m08 = mr ; r24 = p
+03c p =s c03c * m04 ; r22 = p ; mem_r +of14
+03d p = (t4 << 8) ; r2a = p
+03e p = t3 * m07 - m07 ; m07 = mr
+03f p =s t3 * m08 - p ; r2a = p ; mem_r +of15
+040 p = c040 * r1c - r1c ; t1 = c040
+041 p =s t1 * r2a - p ; m08 = mr ; r1c = p
+042 p = c042 * r1a - r1a ; t1 = c042 ; mem_r +of16
+043 p =s t1 * r22 - p ; r1a = p
+044 p = t0 * r25 - r25 ; m0b = mr
+045 p =s t0 * r21 - p ; r22 = p ; mem_r +of17
+046 p = (c046 << 8)
+047 p =s c047 * m1f + p ; m0c = mr ; r34 = p
+048 p =s (c048 * m1d) << 4 ; r21 = p
+049 p = t0 * r27 - r27
+04a p =s t0 * r2a - p ; r21 = p
+04b p =_ c04b * r21 ; idx = p
+04c p = c04c * r03 ; mw = p ; idx = p
+04d p = c04d * r2c
+04e p =s c04e * m09 + p ; r2c = p
+04f p = c04f * r2d
+050 p =s c050 * m0a + p ; r2d = p
+051 p = c051 * r2e ; mem_r @of1b+idx
+052 p =s c052 * m06 + p ; r2e = p
+053 p = c053 * m05 ; m1f = mr ; r2a = p
+054 p = c054 * r24 ; t0 = c054 ; mem_r @of1c
+055 p =s c055 * r22 + p ; r25 = p ; t1 = c055
+056 p = c056 * m07 ; m06 = mr ; r2f = p
+057 p = c057 * r23
+058 p =s c058 * r25 + p ; r27 = p
+059 p = c059 * m08 ; r30 = p
+05a p = c05a * r19 - r19 ; t2 = c05a
+05b p =s t2 * r1a - p ; r19 = p
+05c p =s r1a - p
+05d p =s c05d * r31 ; m07 = p
+05e p =s r27 - p ; r27 = p ; t2 = p
+05f p =s t2 * r34 ; r34 = p
+060 p =s c060 * m07 - r27 ; m07 = p
+061 p = c061 * m1d - p
+062 p =s c062 * r1c + p ; r27 = p
+063 p =s (c063 * r27) << 4 ; r31 = p
+064 p =s r26 - m07 ; r31 = p
+065 p =s c065 * r27 ; r31 = p
+066 p =s c066 * r31 ; idx = p
+067 p =s c067 * r31 ; mw = p ; idx = p
+068 p = c068 * r05 + m02 ; t2 = p
+069 p =s c069 * r27 - p ; m06 = p ; mem_r @of23+idx
+06a p =s (c06a * m06) << 4 ; r27 = p ; t3 = c06a
+06b p = t3 * r07 - r07 ; m07 = mr
+06c p = t3 * r31 - p ; mem_1r @of24+idx
+06d p =s c06d * r27 + p ; r07 = p
+06e p =s c06e * m06 + r05 ; m06 = mr ; r05 = p ; t3 = c06e
+06f p = c06f * m0b ; r27 = p ; mem_r @of25
+070 p = c070 * m0c ; r31 = p
+071 p =s t3 * r05 + m02 ; m02 = p
+072 p = t2 * m07 - m07 ; m01 = mr
+073 p =s t2 * m06 - p ; m1e = p
+074 p = c074 * r05
+075 p = c075 * m02 + p ; t3 = p
+076 p =s c076 * r07 + p ; r35 = p
+077 p = c077 * m1d + p
+078 p =s r26 + p ; r26 = p
+079 p = c079 * r04 - r04 ; t4 = c079
+07a p =s t4 * m01 - p ; r04 = p
+07b p =s m01 - r04 ; m06 = p
+07c p =s (c07c * r26) << 1 ; r03 = p ; t2 = c07c
+07d p = (c07d << 8) ; m07 = p
+07e p = t4 * r06 - r06
+07f p =s t4 * m06 - p ; r06 = p
+080 p =s m06 - r06 ; r26 = p
+081 p =s (c081 * r03) << 4 ; r36 = p
+082 p = c082 * m07 + r1d ; r1d = p
+083 
+084 
+085 p = (c085 << 8) ; r1d = p
+086 p =s c086 * r36 ; mw = p ; idx = p
+087 p =s c087 * r26
+088 p = (c088 << 8)
+089 p =s c089 * r34 + p ; t4 = p
+08a p =s t4 * m01 ; r3e = p ; mem_r @of2e
+08b p =s c08b * r1d ; idx = p ; t4 = p
+08c p = c08c * r0d ; m1d = mr
+08d p = c08d * r0c + p ; t5 = p
+08e p = c08e * r28 + p
+08f p = c08f * r0e + p
+090 p = c090 * r0f + p ; mem_r @of30+idx
+091 p = c091 * r0d + (p >> 15)
+092 p = c092 * r0c + p ; m06 = mr ; r0d = r0c
+093 p = c093 * r28 + p ; r0c = r28 ; mem_1r @of31+idx
+094 p = c094 * r0e + p
+095 p =s (c095 * r0f + p) << 4 ; m07 = mr ; r28 = p ; nodither
+096 p = c096 * m1e
+097 p =s t3 * m1d + p ; r26 = p
+098 p = t5 * m06 - m06
+099 p =s t5 * m07 - p ; r26 = p
+09a p =s t4 * r26 ; r22 = p
+09b p = t0 * r22
+09c p =s t1 * r24 + p ; mw = p
+09d p = c09d * r3e
+09e p = c09e * r1c + p
+09f p =s c09f * r22 + p ; m06 = p ; mem_w +of35
+0a0 p = c0a0 * r3f
+0a1 p =s c0a1 * r33 + p ; r21 = p
+0a2 p = c0a2 * r21
+0a3 p =s c0a3 * r23 + p
+0a4 p = c0a4 * r24 + p
+0a5 p =s c0a5 * m06 + p ; r3f = p
+0a6 nop
+0a7 p =s c0a7 * m06 + r25 ; mw = p
+0a8 p = (c0a8 << 8) ; m08 = p
+0a9 p = c0a9 * r18 + m03 ; m09 = m03
+0aa p =s c0aa * r21 - p ; m0a = p
+0ab p =s c0ab * m06 + r23 ; mw = p ; mem_w +of39
+0ac p = c0ac * r2b ; t0 = c0ac
+0ad p = c0ad * r2c + p ; t1 = c0ad
+0ae p = c0ae * r2d + p ; t3 = c0ae ; mem_w +of3a
+0af p =s (c0af * r2e + p) << 1 ; r22 = p ; t4 = c0af
+0b0 p =s c0b0 * r2a + p ; m06 = p
+0b1 p = t0 * r2f
+0b2 p = t1 * r30 + p
+0b3 p = t3 * r27 + p
+0b4 p = (t4 * r31 + p) << 1
+0b5 p =s c0b5 * r2a + p ; m07 = p
+0b6 p =s m06 - r2b ; mw = p
+0b7 p = c0b7 * m04
+0b8 p = ((c0b8 << 8) + p) << 4 ; m04 = p
+0b9 p =s m06 - r2c ; mw = p
+0ba p =s c0ba * m0a + r18 ; r18 = p ; t0 = c0ba ; mem_w +of3e
+0bb p = c0bb * r0f
+0bc p = c0bc * r0e + p
+0bd p = c0bd * r28 + p ; mem_w +of3f
+0be p = c0be * r10 + p
+0bf p = c0bf * r11 + p
+0c0 p = c0c0 * r0f + (p >> 15)
+0c1 p = c0c1 * r0e + p ; r0f = r0e
+0c2 p = c0c2 * r28 + p ; r0e = r28
+0c3 p = c0c3 * r10 + p
+0c4 p =s (c0c4 * r11 + p) << 4 ; m0b = p ; r23 = p ; nodither
+0c5 p =s m06 - r2d ; mw = p
+0c6 
+0c7 p = (c0c7 << 8) ; m04 = p
+0c8 
+0c9 p =s m06 - r2e ; mw = p ; mem_w +of43
+0ca p =s t0 * r18 + m03 ; m03 = p
+0cb p = c0cb * m0a
+0cc p = c0cc * r18 + p ; mem_w +of44
+0cd p = c0cd * m03 + p
+0ce p = c0ce * r21 + p
+0cf p =s c0cf * m09 + p ; r08 = p
+0d0 p =_ (c0d0 * r26 + m08) << 1 ; r09 = p
+0d1 p =s m07 - r2f ; mw = p
+0d2 p = c0d2 * r20 - r20 ; t0 = c0d2
+0d3 p =s t0 * m0d - p ; r20 = p
+0d4 p =s m0d - r20 ; m06 = p
+0d5 p =s m07 - r30 ; mw = p ; mem_w +of47
+0d6 p = c0d6 * r1f - r1f ; t0 = c0d6
+0d7 p =s t0 * r05 - p ; r1f = p
+0d8 p =a (r05 - p) << 1 ; t0 = c0d8 ; mem_w +of48
+0d9 p =s r1e - p ; m08 = p
+0da p =s m07 - r27 ; mw = p
+0db p = c0db * r11 + m0b
+0dc p = c0dc * r10 + p ; r11 = r10
+0dd p = c0dd * r23 + p ; r10 = r23
+0de p = (c0de * r12 + p) << 1 ; mem_w +of4a
+0df p =s c0df * r13 + p ; r21 = p
+0e0 p =s m07 - r31 ; mw = p
+0e1 p = c0e1 * r13
+0e2 p = c0e2 * r12 + p ; r13 = r12
+0e3 p = (c0e3 * r21 + p) << 2 ; r12 = r21
+0e4 p = (c0e4 * r14 + p) << 1 ; mem_w +of4c
+0e5 p =s c0e5 * r15 + p ; r21 = p
+0e6 p = c0e6 * r15
+0e7 p = c0e7 * r14 + p ; r15 = r14
+0e8 p = (c0e8 * r21 + p) << 2 ; r14 = r21
+0e9 p = (c0e9 * r16 + p) << 2 ; r17 = r16
+0ea p =s c0ea * r17 + p ; r16 = p
+0eb r21 = p
+0ec p = c0ec * m06 ; m06 = p
+0ed p = c0ed * r0b - r0b ; t1 = c0ed
+0ee p =s t1 * r21 - p ; r0b = p
+0ef p =s (r1e) << 4
+0f0 p =s t0 * m08 + r1e ; r1e = p
+0f1 p = c0f1 * r0a - r0a ; t0 = c0f1
+0f2 p =s t0 * r0b - p ; r0a = p
+0f3 p =s r0b - p ; r21 = p
+0f4 p =s (t2 * r35) << 1 ; r3d = p
+0f5 p = c0f5 * m06 ; m06 = p
+0f6 p = c0f6 * m05
+0f7 p =s c0f7 * r22 + p ; m0d = p
+0f8 p = c0f8 * r21
+0f9 p =s (c0f9 * r32 + p) << 2 ; m05 = p
+0fa p = c0fa * m06 ; m20 = p
+0fb p = c0fb * m06 ; m21 = p
+0fc p = m26 ; m30 = p
+0fd p = m27 ; m31 = p

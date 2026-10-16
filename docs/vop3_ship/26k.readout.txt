@@ -1,0 +1,22 @@
+done     stop the recorder, power-cycle the unit, push the session folder with the take.
+tst_ref            L mean +0.00000 sd 0.00000  R mean +0.00000 sd 0.00000  corr +0.000  tst shipped
+B_010              L mean +0.49994 sd 0.00000  R mean +0.04413 sd 0.00000  corr +0.000  
+B_040              L mean +0.49994 sd 0.00000  R mean +0.04413 sd 0.00000  corr +0.000  
+B_060              L mean +0.49994 sd 0.00000  R mean +0.04413 sd 0.00000  corr +0.000  
+B_066              L mean +7.99994 sd 0.00000  R mean +0.04413 sd 0.00000  corr +0.000  
+B_068              L mean -8.00000 sd 0.00000  R mean +0.04413 sd 0.00000  corr +0.000  
+B_069              L mean -8.00000 sd 0.00000  R mean +0.04413 sd 0.00000  corr +0.000  
+B_06b              L mean +7.99994 sd 0.00000  R mean +0.04413 sd 0.00000  corr +0.000  
+B_06c              L mean +7.99994 sd 0.00000  R mean +0.04413 sd 0.00000  corr +0.000  
+B_070              L mean +7.99994 sd 0.00000  R mean +0.04413 sd 0.00000  corr +0.000  
+B_080              L mean +0.06244 sd 0.00000  R mean +0.04413 sd 0.00000  corr +0.000  
+B_0b0              L mean +0.06244 sd 0.00000  R mean +0.04413 sd 0.00000  corr +0.000  
+B_0b9              L mean +0.06244 sd 0.00000  R mean -8.00000 sd 0.00000  corr +0.000  
+B_0bb              L mean +0.06244 sd 0.00000  R mean +7.99994 sd 0.00000  corr +0.000  
+B_0c8              L mean +0.06244 sd 0.00000  R mean +0.04413 sd 0.00000  corr +0.000  
+B_0d4              L mean +0.06244 sd 0.00000  R mean +0.04413 sd 0.00000  corr +0.000  
+B_0d8              L mean +0.06244 sd 0.00000  R mean +2.04388 sd 0.00000  corr +0.000  
+B_0e8              L mean +0.06244 sd 0.00000  R mean +0.04413 sd 0.00000  corr +0.000  
+B_100              L mean +0.06244 sd 0.00000  R mean +0.04413 sd 0.00000  corr +0.000  
+tst_ref_end        L mean +0.00000 sd 0.00000  R mean +0.00000 sd 0.00000  corr +0.000  
+DIR captures/2026-10-01-210435-s25

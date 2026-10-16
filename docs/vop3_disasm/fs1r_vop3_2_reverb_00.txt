@@ -1,0 +1,40 @@
+0e8  path=0.0 route=0 op=3 r7=0.01 class=3  rB=r[3d]
+0e9  path=0.0 route=0 op=0 r7=1.04 class=2  y = s + k*(r[3d] + r[1f]) b=1
+0ea  path=0.0 route=1 op=5s r7=1.0a class=3  rA=r[1f] rB=r[3d] -> w[01]
+0eb  nop
+0ec  path=0.0 route=0 op=3 r7=0.01 class=3  rB=r[3e]
+0ed  path=0.0 route=0 op=0 r7=1.04 class=2  y = s + k*(r[3e] + r[2b]) b=1
+0ee  path=0.0 route=1 op=5s r7=1.0a class=3  rA=r[2b] rB=r[3e] -> w[06]
+0ef  nop
+0f0  path=0.0 route=0 op=3 r7=0.01 class=3  rB=r[3f]
+0f1  path=0.0 route=0 op=0 r7=1.04 class=2  y = s + k*(r[3f] + r[20]) b=1
+0f2  path=0.0 route=1 op=5s r7=1.0a class=3  rA=r[20] rB=r[3f] -> w[02]
+0f3  nop
+0f4  path=0.0 route=0 op=3 r7=0.01 class=3  rB=r[40]
+0f5  path=0.0 route=0 op=0 r7=1.04 class=2  y = s + k*(r[40] + r[2c]) b=1
+0f6  path=0.0 route=1 op=5s r7=1.0a class=3  rA=r[2c] rB=r[40] -> w[05]
+0f7  nop
+0f8  path=0.0 route=0 op=3 r7=0.01 class=3  rB=r[41]
+0f9  path=0.0 route=0 op=0 r7=1.04 class=2  y = s + k*(r[41] + r[21]) b=1
+0fa  path=0.0 route=1 op=5s r7=1.0a class=3  rA=r[21] rB=r[41] -> w[03]
+0fb  nop
+0fc  path=0.0 route=0 op=3 r7=0.01 class=3  rB=r[42]
+0fd  path=0.0 route=0 op=0 r7=1.04 class=2  y = s + k*(r[42] + r[2d]) b=1
+0fe  path=0.0 route=1 op=5s r7=1.0a class=3  rA=r[2d] rB=r[42] -> w[28]
+0ff  nop
+100  path=0.0 route=0 op=3 r7=0.01 class=3  rB=r[65]
+101  path=0.0 route=0 op=0 r7=1.04 class=2  y = s + k*(r[65] + r[22]) b=1
+102  path=0.0 route=1 op=5s r7=1.0a class=3  rA=r[22] rB=r[65] -> w[04]
+103  nop
+104  path=0.0 route=0 op=3 r7=0.01 class=3  rB=r[66]
+105  path=0.0 route=0 op=0 r7=1.04 class=2  y = s + k*(r[66] + r[2e]) b=1
+106  path=0.0 route=1 op=5s r7=1.0a class=3  rA=r[2e] rB=r[66] -> w[29]
+107  nop
+108  nop
+109  nop
+10a  path=0.0 route=0 op=3 r7=0.01 class=2  y = k*r[07] b=3
+10b  path=0.0 route=3 op=0 r7=1.00 class=2  y = s + k*r[11] d[28] = y b=3
+10c  path=0.0 route=0 op=3 r7=0.01 class=2  y = k*r[08] b=3
+10d  path=0.0 route=3 op=0 r7=1.00 class=2  y = s + k*r[12] d[29] = y b=3
+10e  path=0.0 route=0 op=0 r7=0.00 class=0  -> w[11]
+10f  nop

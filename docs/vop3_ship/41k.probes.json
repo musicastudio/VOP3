@@ -1,0 +1,120 @@
+{
+ "configs": {
+  "ins_flanger_voko": {
+   "slot": "ins",
+   "type": 3,
+   "voice": "sine",
+   "hz": 1000.0,
+   "level": 90,
+   "block": "0011000a00090018003100640003000000002204450a4040122e122e122e122e001f0064000700320040000000060001001a0040002e0040000300450004000800400014003e00320040006300270040000a007c0000003e01404014404014034029407f4a0c0701422401442f070000",
+   "src": "Vokodrone"
+  }
+ },
+ "probes": [
+  {
+   "config": "ins_flanger_voko",
+   "name": "voko_t1d5",
+   "steps": {
+    "0d0": [
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "1d5": [
+     0,
+     79,
+     51328,
+     17689,
+     32825
+    ]
+   },
+   "detail": "0d0 nop; step 1d5 (line-1 interpolated tap) also writes its result to m[11]"
+  },
+  {
+   "config": "ins_flanger_voko",
+   "name": "voko_t1d1",
+   "steps": {
+    "0d0": [
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "1d1": [
+     0,
+     119,
+     51328,
+     17691,
+     32829
+    ]
+   },
+   "detail": "0d0 nop; step 1d1 (line-2 interpolated tap) also writes its result to m[11]"
+  },
+  {
+   "config": "ins_flanger_voko",
+   "name": "voko_t1c4",
+   "steps": {
+    "0d0": [
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "1c4": [
+     0,
+     197,
+     51328,
+     0,
+     41600
+    ]
+   },
+   "detail": "0d0 nop; step 1c4 (m39 capture step) also writes its result to m[11]"
+  },
+  {
+   "config": "ins_flanger_voko",
+   "name": "voko_t1e9",
+   "steps": {
+    "0d0": [
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "1e9": [
+     0,
+     82,
+     51328,
+     20992,
+     43136
+    ]
+   },
+   "detail": "0d0 nop; step 1e9 (r52) also writes its result to m[11]"
+  },
+  {
+   "config": "ins_flanger_voko",
+   "name": "voko_t1f5",
+   "steps": {
+    "0d0": [
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "1f5": [
+     0,
+     17,
+     51328,
+     24576,
+     33280
+    ]
+   },
+   "detail": "0d0 nop; step 1f5 (r11 out) also writes its result to m[11]"
+  }
+ ]
+}

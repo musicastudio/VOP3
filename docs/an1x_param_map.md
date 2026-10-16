@@ -1,0 +1,73 @@
+# AN1x scene-parameter -> VOP3 step map (from an1x_v104.bin table at 0xCFCEC, 0x22 bytes/entry, index = scene sysex address)
+
+Columns: handler (recomputes the parameter), coef-fn (writes constants into VOP3 via FUN_000564a0 = write coef, FUN_000564f4/FUN_00056562 = write coef+byte), per-voice step lists (5 voices), fixed steps.
+
+- `00` Poly Mode      handler=45882 coef-fn=458ca -
+- `01` PB Up          handler=4da06 coef-fn=458ca -
+- `02` PB Down        handler=4dd78 coef-fn=458ca -
+- `03` PEG Decay      handler=53874 coef-fn=458ca -
+- `04` PEG Depth      handler=4c896 coef-fn=458ca -
+- `05` PEG Sw         handler=4c896 coef-fn=458ca -
+- `06` Port Mode      handler=45882 coef-fn=458ca -
+- `07` Port Time      handler=4d2dc coef-fn=458ca -
+- `08` LFO Reset      handler=4455c coef-fn=458ca -
+- `09` LFO1 Wave      handler=43616 coef-fn=458ca -
+- `0a` LFO1 Speed     handler=43c12 coef-fn=458ca -
+- `0b` LFO1 Speed lo  handler=45882 coef-fn=458ca -
+- `0c` LFO1 Delay     handler=54012 coef-fn=458ca -
+- `0d` LFO2 Speed     handler=441b0 coef-fn=458ca -
+- `0e` LFO2 Speed lo  handler=45882 coef-fn=458ca -
+- `0f` Algorithm      handler=46c9c coef-fn=458ca -
+- `10` Sync Pitch     handler=45910 coef-fn=46d7e steps=[00e 016 01e 026 03b]
+- `11` SyncPit Dp     handler=460a4 coef-fn=46fe4 steps=[00d 015 01d 025 03a]
+- `12` SyncPit Src    handler=47692 coef-fn=458ca steps=[00d 015 01d 025 03a]
+- `13` SyncPmod Sw    handler=4775c coef-fn=458ca -
+- `14` FM Depth       handler=4793a coef-fn=458ca -
+- `15` FM Src1        handler=47692 coef-fn=458ca steps=[007 00b 00c 013 014]
+- `16` FM Src2        handler=48646 coef-fn=458ca -
+- `17` VCO1 Wave      handler=486d6 coef-fn=458ca -
+- `18` VCO1 Pitch     handler=48922 coef-fn=487e8 step=004/009
+- `19` VCO1 Fine      handler=48922 coef-fn=487e8 step=004/009
+- `1a` VCO1 Edge      handler=48e62 coef-fn=458ca steps=[09a 0ac 0b9 0c6 0d3]
+- `1b` VCO1 PW        handler=49790 coef-fn=458ca step=006/000
+- `1c` VCO1 PWM Dp    handler=49f34 coef-fn=458ca steps=[01c 02d 031 033 034]
+- `1d` VCO1 PWM Src   handler=47692 coef-fn=458ca steps=[01c 02d 031 033 034]
+- `1e` VCO1 Pmod Dp   handler=4a716 coef-fn=458ca step=001/000
+- `1f` VCO1 Pmod lo   handler=45882 coef-fn=458ca -
+- `20` VCO2 Wave      handler=4aa9e coef-fn=458ca -
+- `21` VCO2 Pitch     handler=48922 coef-fn=48892 step=0e3/0e7
+- `22` VCO2 Fine      handler=48922 coef-fn=48892 step=0e3/0e7
+- `23` VCO2 Edge      handler=48e62 coef-fn=458ca steps=[105 111 113 123 124]
+- `24` VCO2 PW        handler=49790 coef-fn=458ca step=0f1/000
+- `25` VCO2 PWM Dp    handler=49f34 coef-fn=458ca steps=[0f2 0f4 0f5 0fa 0fd]
+- `26` VCO2 PWM Src   handler=47692 coef-fn=458ca steps=[0f2 0f4 0f5 0fa 0fd]
+- `27` VCO2 Pmod Dp   handler=4a716 coef-fn=458ca step=003/002
+- `28` VCO2 Pmod lo   handler=45882 coef-fn=458ca -
+- `29` VCO1 Level     handler=4acce coef-fn=4aba0 steps=[148 14d 152 157 15c]
+- `2a` VCO2 Level     handler=4acce coef-fn=4aba0 steps=[149 14e 153 158 15d]
+- `2b` Ring Mod       handler=4acce coef-fn=4aba0 steps=[147 14c 151 156 15b]
+- `2c` Noise Level    handler=4acce coef-fn=4aba0 steps=[14a 14f 154 159 15e]
+- `2d` FEG Attack     handler=5225e coef-fn=458ca -
+- `2e` FEG Decay      handler=5225e coef-fn=458ca -
+- `2f` FEG Sustain    handler=53164 coef-fn=458ca -
+- `30` FEG Release    handler=5225e coef-fn=458ca -
+- `31` HPF Cutoff     handler=4e298 coef-fn=458ca -
+- `32` VCF Type       handler=4ea8a coef-fn=458ca -
+- `33` VCF Cutoff     handler=45910 coef-fn=4ed8e steps=[165 16d 174 17c 185]
+- `34` Resonance      handler=4f83c coef-fn=458ca -
+- `35` FEG Depth      handler=4ef5e coef-fn=458ca -
+- `36` FEG Depth lo   handler=45882 coef-fn=458ca -
+- `37` FEG VelSns     handler=4ef5e coef-fn=458ca -
+- `38` VCF KeyTrk     handler=4edf6 coef-fn=458ca -
+- `39` VCF Mod Dp     handler=4c38a coef-fn=50422 step=1f2/1f1
+- `3a` AEG Attack     handler=5225e coef-fn=458ca -
+- `3b` AEG Decay      handler=5225e coef-fn=458ca -
+- `3c` AEG Sustain    handler=52bc6 coef-fn=458ca -
+- `3d` AEG Release    handler=5225e coef-fn=458ca -
+- `3e` VCA Feedback   handler=466de coef-fn=4b4ba step=146/000
+- `3f` VCA Volume     handler=4b69a coef-fn=458ca -
+- `40` AEG VelSns     handler=4b69a coef-fn=458ca -
+- `41` VCA Mod Dp     handler=4c38a coef-fn=4c34e step=1ee/1ed
+- `42` Vari D:W       handler=45882 coef-fn=458ca -
+- `43` reserve        handler=45882 coef-fn=458ca -
+- `44` CtrlMtx Src1   handler=30005 coef-fn=50000 step=703/405

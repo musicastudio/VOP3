@@ -1,0 +1,27 @@
+done     stop the recorder, power-cycle the unit, push the session folder with the take.
+tst_ref            L mean +0.00000 sd 0.00000  R mean +0.00000 sd 0.00000  corr +0.000  tst shipped
+base               L mean +0.43744 sd 0.00000  R mean +0.46869 sd 0.00000  corr +0.000  
+tL_53              L mean +0.06250 sd 0.00000  R mean +0.46869 sd 0.00000  corr +0.000  
+tL_54              L mean +0.09375 sd 0.00000  R mean +0.46869 sd 0.00000  corr +0.000  
+tL_09              L mean +0.10938 sd 0.00000  R mean +0.46869 sd 0.00000  corr +0.000  
+tL_0a              L mean +0.11719 sd 0.00000  R mean +0.46869 sd 0.00000  corr +0.000  
+tL_17              L mean +0.10938 sd 0.00000  R mean +0.46869 sd 0.00000  corr +0.000  
+tL_18              L mean +0.10938 sd 0.00000  R mean +0.46869 sd 0.00000  corr +0.000  
+tL_19              L mean +0.10938 sd 0.00000  R mean +0.46869 sd 0.00000  corr +0.000  
+tL_1a              L mean +0.10938 sd 0.00000  R mean +0.46869 sd 0.00000  corr +0.000  
+tL_1b              L mean +0.10938 sd 0.00000  R mean +0.46869 sd 0.00000  corr +0.000  
+tL_1c              L mean +0.10938 sd 0.00000  R mean +0.46869 sd 0.00000  corr +0.000  
+tL_1d              L mean +0.10938 sd 0.00000  R mean +0.46869 sd 0.00000  corr +0.000  
+tL_1e              L mean +0.10938 sd 0.00000  R mean +0.46869 sd 0.00000  corr +0.000  
+tL_23              L mean +0.11719 sd 0.00000  R mean +0.46869 sd 0.00000  corr +0.000  
+tL_24              L mean +0.11719 sd 0.00000  R mean +0.46869 sd 0.00000  corr +0.000  
+tL_25              L mean +0.11719 sd 0.00000  R mean +0.46869 sd 0.00000  corr +0.000  
+tL_26              L mean +0.11719 sd 0.00000  R mean +0.46869 sd 0.00000  corr +0.000  
+tL_27              L mean +0.11719 sd 0.00000  R mean +0.46869 sd 0.00000  corr +0.000  
+tL_28              L mean +0.11719 sd 0.00000  R mean +0.46869 sd 0.00000  corr +0.000  
+tL_29              L mean +0.11719 sd 0.00000  R mean +0.46869 sd 0.00000  corr +0.000  
+tL_2a              L mean +0.11719 sd 0.00000  R mean +0.46869 sd 0.00000  corr +0.000  
+tR_53              L mean +0.43744 sd 0.00000  R mean +0.06250 sd 0.00000  corr +0.000  
+cf_empty           L mean +0.00000 sd 0.00000  R mean +0.46869 sd 0.00000  corr +0.000  
+tst_ref_end        L mean +0.00000 sd 0.00000  R mean +0.00000 sd 0.00000  corr +0.000  
+DIR captures/2026-10-01-211209-s25

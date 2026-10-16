@@ -1,0 +1,40 @@
+0e8  path=0.0 route=0 op=3 r7=0.01 class=0   b=3
+0e9  path=0.0 route=0 op=3 r7=0.01 class=0   b=3
+0ea  path=0.0 route=0 op=3 r7=0.01 class=0  
+0eb  path=2.0 route=0 op=3 r7=0.01 class=0  rA=r[3d] dram[3a] = y/16
+0ec  path=0.0 route=0 op=3 r7=0.01 class=0  rA=r[3e]
+0ed  path=0.0 route=0 op=3 r7=0.01 class=0  rA=r[3f]
+0ee  path=0.0 route=0 op=3 r7=0.01 class=0  rA=r[40]
+0ef  path=2.0 route=0 op=3 r7=0.01 class=0  rA=r[41] d[1a8] dram[3b] = y/16
+0f0  path=0.0 route=0 op=3 r7=0.01 class=0  rA=r[42] d[1a9]
+0f1  path=0.0 route=0 op=3 r7=0.01 class=0   b=3
+0f2  path=0.0 route=0 op=3 r7=0.01 class=0  
+0f3  path=2.0 route=0 op=3 r7=0.01 class=0  dram[3c] = y/16
+0f4  path=0.0 route=0 op=3 r7=0.01 class=0  
+0f5  path=0.0 route=0 op=3 r7=0.01 class=0  
+0f6  path=0.0 route=0 op=3 r7=0.01 class=0  
+0f7  path=2.0 route=0 op=3 r7=0.01 class=0  dram[3d] = y/16
+0f8  path=0.0 route=0 op=3 r7=0.01 class=0  
+0f9  path=0.0 route=0 op=3 r7=0.01 class=0  
+0fa  path=0.0 route=0 op=3 r7=0.01 class=0  
+0fb  path=2.0 route=0 op=3 r7=0.01 class=0  dram[3e] = y/16
+0fc  path=0.0 route=0 op=3 r7=0.01 class=0  
+0fd  path=0.0 route=0 op=3 r7=0.01 class=0  
+0fe  path=0.0 route=0 op=3 r7=0.01 class=0  
+0ff  path=2.0 route=0 op=3 r7=0.01 class=0  dram[3f] = y/16
+100  path=0.0 route=0 op=3 r7=0.01 class=0  
+101  path=0.0 route=0 op=3 r7=0.01 class=0  
+102  path=0.0 route=0 op=3 r7=0.01 class=0  
+103  path=2.0 route=0 op=3 r7=0.01 class=0  dram[40] = y/16
+104  path=0.0 route=0 op=3 r7=0.01 class=0   b=3
+105  path=0.0 route=0 op=3 r7=0.01 class=0   b=3
+106  path=0.0 route=0 op=3 r7=0.01 class=0  
+107  path=2.0 route=0 op=3 r7=0.01 class=0  dram[41] = y/16
+108  path=0.0 route=0 op=3 r7=0.01 class=0  
+109  path=0.0 route=0 op=3 r7=0.01 class=0  
+10a  path=0.0 route=0 op=3 r7=0.01 class=0  
+10b  path=2.0 route=0 op=3 r7=0.01 class=0  dram[42] = y/16
+10c  path=0.0 route=0 op=3 r7=0.01 class=0  
+10d  path=0.0 route=0 op=3 r7=0.01 class=0  
+10e  path=0.0 route=0 op=3 r7=0.01 class=0  -> w[11] b=3
+10f  path=2.0 route=0 op=3 r7=0.01 class=0  -> w[11] dram[43] = y/16

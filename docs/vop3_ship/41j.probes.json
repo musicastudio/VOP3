@@ -1,0 +1,112 @@
+{
+ "configs": {
+  "ins_flanger_voko": {
+   "slot": "ins",
+   "type": 3,
+   "voice": "sine",
+   "hz": 1000.0,
+   "level": 90,
+   "block": "0011000a00090018003100640003000000002204450a4040122e122e122e122e001f0064000700320040000000060001001a0040002e0040000300450004000800400014003e00320040006300270040000a007c0000003e01404014404014034029407f4a0c0701422401442f070000",
+   "src": "Vokodrone"
+  }
+ },
+ "probes": [
+  {
+   "config": "ins_flanger_voko",
+   "name": "voko_t1bd",
+   "steps": {
+    "0d0": [
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "1bd": [
+     0,
+     23296,
+     51332,
+     32768,
+     48768
+    ]
+   },
+   "detail": "0d0 nop; step 1bd (second delay index) also writes its result to m[11]"
+  },
+  {
+   "config": "ins_flanger_voko",
+   "name": "voko_t1ba",
+   "steps": {
+    "0d0": [
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "1ba": [
+     0,
+     381,
+     51328,
+     32768,
+     16384
+    ]
+   },
+   "detail": "0d0 nop; step 1ba (r7d load) also writes m[11]"
+  },
+  {
+   "config": "ins_flanger_voko",
+   "name": "voko_t1a9",
+   "steps": {
+    "0d0": [
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "1a9": [
+     0,
+     381,
+     51328,
+     20480,
+     16384
+    ]
+   },
+   "detail": "0d0 nop; step 1a9 (r7d load) also writes m[11]"
+  },
+  {
+   "config": "ins_flanger_voko",
+   "name": "voko_m2a",
+   "steps": {
+    "0d0": [
+     0,
+     0,
+     51328,
+     29120,
+     32810
+    ]
+   },
+   "coefs": {
+    "0d0": 1024
+   },
+   "detail": "step 0d0: R DAC = m[2a] (k 1/32)"
+  },
+  {
+   "config": "ins_flanger_voko",
+   "name": "voko_m2b",
+   "steps": {
+    "0d0": [
+     0,
+     0,
+     51328,
+     29120,
+     32811
+    ]
+   },
+   "coefs": {
+    "0d0": 1024
+   },
+   "detail": "step 0d0: R DAC = m[2b] (k 1/32)"
+  }
+ ]
+}

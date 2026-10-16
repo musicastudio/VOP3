@@ -7,7 +7,7 @@ deleted or corrected after the fact: a withdrawn reading stays where it was writ
 withdrew it.
 
 **Field names below are the session-era ones** (`r6 r9 r8 r7 r10` words, `class`, `rA`/`rB`, `op`, `route`,
-`wdst`, `daddr`, `d[]`, `w[]`), as `tools/vop3_disasm.py` still prints them. `docs/vop3_isa.md` section 3 maps
+`wdst`, `daddr`, `d[]`, `w[]`), as `tools/vop3_disasm.py` still prints them. `docs/vop3_isa.md` appendix A maps
 each to the field the core decodes. Where the two disagree (for example session 15's "`r7[11]` rectifies", which
 the core reads as `w3[15:14]` = 3), the core is what the unit was last checked against.
 

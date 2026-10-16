@@ -1,5 +1,7 @@
 # VOP3 against the EX5 MEG: step matching
 
+> **Status:** the matched results below stand. The sections that measure them against `vop3_blockers.md` and the "Next" list predate the decode: every blocker they name except VOP3-1's banking is closed, and the field names are the early ones (`vop3_isa.md` appendix A).
+
 `python tools/vop3_meg_match.py` asserts everything below that is marked **matched**. Started 2026-10-01 as route 1 of `docs/vop3_blockers.md`.
 
 The MEG (EX5, decoded by MAME, `tools/meg_interp.py`) shows its arithmetic outright; the VOP3 does not. What lets a VOP3 step be paired with a MEG step by role, rather than by guessing at shape, is the FS1R firmware: `docs/vop3_2_params.md` names which step every effect constant goes to and what the constant is. The reverb combs are the first structure where both sides are pinned.

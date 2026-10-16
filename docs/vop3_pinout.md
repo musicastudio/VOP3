@@ -1,9 +1,6 @@
 # YSS236-F (VOP3) pinout
 
-Yamaha AN200 service manual page 12, "I LSI PIN DISCRIPTION / G YSS236-F (XT013A00) VOP3, PLG150-AN: IC4", kept as
-`docs/yamaha_an200_service_manual.pdf`. 160 pins. The FS1R's own service manual is scanned images, so its copy of this
-table is not readable by machine; the AN200's is typeset. Pointed out by rgwan, 2026-09-15, along with the FS1R's audio
-path (`docs/research.md` 2.0.1).
+From the Yamaha AN200 service manual, page 12, "I LSI PIN DISCRIPTION / G YSS236-F (XT013A00) VOP3, PLG150-AN: IC4". 160 pins. The FS1R's own service manual is scanned, so the AN200's typeset copy is the readable one; rgwan pointed it out, along with the FS1R's audio path. The PSR-1100/2100 service manual (page 21) carries the same table for the same part.
 
 The manual's own wording is kept, "Sync.signal" and "intput" included. Its VDD and VSS rows say "Ground" and "Power
 supply" the wrong way round, so those cells are left empty here rather than copy the swap.
@@ -102,8 +99,7 @@ supply" the wrong way round, so those cells are left empty here rather than copy
 - **Each chip has its own window on CS2, decoded on A8 and A9** (rgwan, 2026-09-16). VOP3-1 answers with A8 = 0 and
   A9 = 1, so 0x800200; VOP3-2 with A8 = 0 and A9 = 0, so 0x800000; A8 = 1 clocks the LED and LCD-contrast latch at
   0x800100. Nothing above A9 is decoded. The firmware has a full driver for each, `FUN_0000B5E2` and `FUN_00039648`,
-  and the one we found first is the filter chip's. `docs/research.md` section 8 has the logic and the two drivers side
-  by side.
+  and the one we found first is the filter chip's. `vop3_isa.md` section 2 has the register map they drive.
 - **External memory: WA00-WA17, WD00-WD19, with WEN, OEN, RASN, CASN and CEN**, so up to 256K words of 20-bit DRAM per
   chip. **IC31's are left open in the schematic** (rgwan, 2026-09-16), so VOP3-1 has no delay memory and cannot be
   running a reverb. That confirms the split from the diagram. The FS1R's 512 KB DRAM at 0x01000000 is the CPU's, on a

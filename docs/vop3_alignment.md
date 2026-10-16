@@ -1,5 +1,7 @@
 # VOP3 <-> MEG alignment, first pass (2026-09-30)
 
+> **Status:** the first VOP3-to-MEG comparison, made before the step word was decoded. Its register names (`0x1A`, `0x1C`, `0x2C`) are the AN drivers' byte offsets, which are registers 0x0D, 0x0E and 0x16, and its "Next" list was overtaken by the decode. The current rules are in `vop3_isa.md`.
+
 Inputs: PLG150-AN VOP3 AN program `docs/vop3_an/mode0.bin` (230 steps, 0x004..0x0E9, from
 `tools/extract_plg150an_vop3.py`) and the EX5 MEG AN program at EX5_TG1.bin 0x3C97D4 (254 steps,
 `tools/meg_disasm.py`). Same synthesis engine, two chips.

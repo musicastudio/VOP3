@@ -1,5 +1,7 @@
 # EX5 as a reference for the FS1R's VOP3 (2026-09-30)
 
+> **Status:** written before the VOP3 was decoded, as the case for the EX5 as a reference. The "undecoded" status and the next steps below are out of date; the decode is in `vop3_isa.md`, and the step matching it led to is in `vop3_meg_match.md` and `mu2000_meg.md`.
+
 ## What the EX5 actually runs AN on
 
 From the EX5 service manual (archive.org, `Yamaha_EX5_Service_Manual`) and `roms/EX5_TG1.bin`:

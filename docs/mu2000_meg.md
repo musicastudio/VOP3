@@ -1,5 +1,7 @@
 # The MU2000's MEG effects against the FS1R's VOP3-2 (2026-10-07)
 
+> **Status:** the field names and op numbers below are the disassembler's (`vop3_isa.md` appendix A). The insertion-name correction under "Side findings" is applied to `vop3_2_params.md` and `vop3_2/params.json`.
+
 `MU2000/effects-fs1r-mu2000-params.md` showed that the FS1R's effect types have MU2000 namesakes with the same
 parameters (820 of 820 shared parameter slots carry the same name; DOC, the two data lists). This document checks the claim behind it in the two firmwares:
 the FS1R's VOP3-2 runs the MU-series XG effect library, recompiled for a different DSP. It does. The two firmwares

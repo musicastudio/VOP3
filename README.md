@@ -79,9 +79,9 @@ double out = yss236_core::dac(chip.core.out[slot]) / Vop3::WORD;   // the 18-bit
 * `docs/vop3_meg_match.md`, `docs/vop3_alignment.md`, `docs/ex5_meg.md`, `docs/mu2000_meg.md`: the same Yamaha algorithms on the decoded SWP30 MEG (EX5, MU2000), matched step by step against the VOP3.
 * `docs/vop3_blockers.md`: what stood between the disassembly and a running model, and what closed each.
 * `docs/vop3/`, `docs/vop3_2/`, `docs/vop3_an/`, `docs/vop3_an1x/`: the extracted program images. `docs/vop3_disasm/`: their disassembly.
-* `docs/vop3_ship/`, `docs/vop3_probes.json`: the probe sets run against the unit and the core's predictions. `docs/captures/sessions.md`: the index of the register sessions.
+* `docs/vop3_ship/`, `docs/vop3_probes.json`: the probe sets run against the unit and the core's predictions.
 
-What is still open is marked **OPEN** where it occurs, and collected in `docs/vop3_isa.md` section 9.
+What is still open is collected in `docs/vop3_isa.md` section 9. Some research documents cite scripts and capture folders that are not in this repo (the extraction and rig tooling that produced them); their results are recorded in the documents.
 
 ## Credits
 
@@ -92,6 +92,6 @@ What is still open is marked **OPEN** where it occurs, and collected in `docs/vo
 
 ## Licence
 
-The code and documentation are released under the BSD 3-Clause licence, `LICENSE`. Every contributor, Wouter van Nifterick, James Hansen and rgwan, agreed to this release under the BSD licence. AsmJit, in `third_party/asmjit`, keeps its zlib licence.
+The code and documentation are released under the BSD 3-Clause licence, `LICENSE`. Every contributor, Wouter van Nifterick, Zhiyuan Wan and James Hansen, agreed to this release under the BSD licence. AsmJit, in `third_party/asmjit`, keeps its zlib licence.
 
 The program images in `docs/vop3*/` and the listings made from them are Yamaha's microcode, extracted from the FS1R, AN1x and PLG150-AN firmware. They are included as research material for interoperability, and the BSD licence does not cover them.

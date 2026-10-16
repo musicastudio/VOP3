@@ -110,7 +110,7 @@ What is still open is collected in `docs/vop3_isa.md` section 9. Some research d
 * **Wouter van Nifterick** ([@WouterVanNifterick](https://github.com/WouterVanNifterick)): the microcode engine and interpreter, the chip model and the register map.
 * **James Hansen** ([@jameshansen](https://github.com/jameshansen)): the AsmJit compiler and its check.
 * **Zhiyuan Wan** ([@rgwan](https://github.com/rgwan)): the FS1R the chip was measured on, and the hardware sessions behind every CHIP rule.
-* Claude (Anthropic) assisted with the research, the tooling and this standalone release.
+* AI Models: Claude (Anthropic) assisted with the research, the tooling and this standalone release. GLM 5.3, GLM 5.3 Flash, Space Bunny, LongCat and Qwen Models used at various points during the research process.
 
 ## Licence
 
